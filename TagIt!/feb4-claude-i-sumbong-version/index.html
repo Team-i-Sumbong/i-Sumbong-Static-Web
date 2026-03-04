@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>i-Sumbong — Barangay Issue Reporting & Monitoring System</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E63329;
+    --red-dark: #b82820;
+    --red-glow: rgba(230,51,41,0.18);
+    --gold: #F5A623;
+    --bg: #0A0D10;
+    --bg2: #0F1318;
+    --bg3: #161C23;
+    --surface: #1A2130;
+    --border: rgba(255,255,255,0.07);
+    --text: #EDF0F4;
+    --muted: #7A8799;
+    --sun: #F5A623;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.5;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(10,13,16,0.8);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .nav-logo .i { color: var(--red); }
+  .nav-logo .badge {
+    background: var(--red);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--red);
+    color: #fff !important;
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Philippine sun radial burst */
+  .hero-sun {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px; height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center,
+      rgba(245,166,35,0.07) 0%,
+      rgba(230,51,41,0.05) 30%,
+      transparent 70%
+    );
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.7; }
+    50% { transform: translate(-50%,-50%) scale(1.08); opacity: 1; }
+  }
+
+  .hero-rays {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1100px; height: 1100px;
+    animation: rotateSlow 60s linear infinite;
+  }
+
+  .hero-rays::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(
+      rgba(245,166,35,0.03) 0deg 6deg,
+      transparent 6deg 18deg
+    );
+    border-radius: 50%;
+  }
+
+  @keyframes rotateSlow {
+    from { transform: translate(-50%,-50%) rotate(0deg); }
+    to { transform: translate(-50%,-50%) rotate(360deg); }
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 860px; }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(230,51,41,0.12);
+    border: 1px solid rgba(230,51,41,0.3);
+    color: #ff7b74;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-tag .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    animation: blink 1.5s ease infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  h1 .accent { color: var(--red); }
+  h1 .sub { color: var(--muted); font-size: 0.7em; display: block; margin-top: 4px; }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 44px;
+    line-height: 1.75;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(230,51,41,0.35);
+  }
+  .btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(230,51,41,0.45);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeUp 0.6s 0.5s ease both;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--red), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── STATS STRIP ─── */
+  .stats-strip {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    justify-content: center;
+  }
+
+  .stat-num .unit { font-size: 1.2rem; color: var(--red); }
+  .stat-label {
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 60px; max-width: 1200px; margin: 0 auto; }
+
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+
+  .section-body {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 52px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+    height: 440px;
+    border-radius: 20px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 30%, rgba(230,51,41,0.12), transparent 60%),
+                radial-gradient(ellipse at 70% 70%, rgba(245,166,35,0.06), transparent 60%);
+  }
+
+  .window-mockup {
+    width: 80%;
+    background: var(--bg2);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+  }
+
+  .window-bar {
+    background: var(--surface);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dot-r { width: 10px; height: 10px; border-radius: 50%; background: #E63329; }
+  .dot-y { width: 10px; height: 10px; border-radius: 50%; background: #F5A623; }
+  .dot-g { width: 10px; height: 10px; border-radius: 50%; background: #4CAF50; }
+
+  .window-title {
+    margin-left: 8px;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .window-body { padding: 20px; }
+
+  .mock-row {
+    height: 10px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.08);
+    margin-bottom: 10px;
+    animation: shimmer 2s ease infinite;
+  }
+
+  .mock-row.short { width: 50%; }
+  .mock-row.red { background: rgba(230,51,41,0.25); width: 70%; }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .mock-status-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .mock-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+  }
+
+  .badge-pending { background: rgba(245,166,35,0.15); color: #F5A623; }
+  .badge-progress { background: rgba(66,153,225,0.15); color: #63B3ED; }
+  .badge-resolved { background: rgba(72,187,120,0.15); color: #68D391; }
+
+  /* ─── FEATURES ─── */
+  .features-section { background: var(--bg2); max-width: 100%; padding: 100px 0; }
+  .features-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 0;
+  }
+
+  .feature-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    cursor: default;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 0%, rgba(230,51,41,0.08), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .feature-card:hover {
+    border-color: rgba(230,51,41,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+  }
+
+  .feature-card:hover::before { opacity: 1; }
+
+  .feature-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: rgba(230,51,41,0.1);
+    border: 1px solid rgba(230,51,41,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .feature-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+
+  .feature-desc {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  /* ─── WORKFLOW ─── */
+  .workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 16px;
+  }
+
+  .workflow-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(12.5% + 12px);
+    right: calc(12.5% + 12px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--red), rgba(230,51,41,0.2));
+  }
+
+  .workflow-step {
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+  }
+
+  .step-num {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--bg3);
+    border: 2px solid var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--red);
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(230,51,41,0.2);
+  }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  /* ─── TEAM ─── */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 0;
+  }
+
+  .team-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+
+  .team-card:hover {
+    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+  }
+
+  .team-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--red);
+    margin: 0 auto 14px;
+  }
+
+  .team-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 4px;
+  }
+
+  .team-role {
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── DOWNLOAD CTA ─── */
+  .cta-section {
+    max-width: 100%;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+
+  .cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .cta-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .cta-desc {
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 36px;
+    font-size: 1.02rem;
+  }
+
+  .requirements-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .req-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .req-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+
+  .req-item:last-child { border-bottom: none; }
+
+  .req-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: rgba(230,51,41,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .req-label { color: var(--muted); font-size: 0.8rem; display: block; }
+  .req-value { font-weight: 500; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 60px 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.03em;
+  }
+
+  .footer-logo .i { color: var(--red); }
+
+  .footer-copy {
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .footer-ph {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .ph-flag { font-size: 1.2rem; }
+
+  /* ─── DIVIDER ─── */
+  .full-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section { padding: 70px 24px; }
+    .stats-strip { padding: 30px 24px; gap: 40px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { height: 280px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .workflow-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .workflow-steps::before { display: none; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    footer { flex-direction: column; text-align: center; padding: 40px 24px; }
+    .features-inner { padding: 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="i">i</span>-Sumbong
+    <span class="badge">Beta</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#download" class="nav-cta">Download</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-sun"></div>
+    <div class="hero-rays"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      Barangay Digital Governance
+    </div>
+    <h1>
+      <span class="accent">i-Sumbong</span>
+      <span class="sub">Report. Track. Resolve.</span>
+    </h1>
+    <p class="hero-desc">
+      A Java-based desktop system that bridges the gap between residents and barangay officials — making community issue reporting transparent, efficient, and accountable.
+    </p>
+    <div class="hero-actions">
+      <a href="#download" class="btn-primary">
+        ⬇ Download the App
+      </a>
+      <a href="#features" class="btn-ghost">
+        ✦ See Features
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat">
+    <div class="stat-num">6<span class="unit">+</span></div>
+    <div class="stat-label">Core Features</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">3<span class="unit">x</span></div>
+    <div class="stat-label">Faster Reporting</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">100<span class="unit">%</span></div>
+    <div class="stat-label">Transparent Tracking</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">1<span class="unit"></span></div>
+    <div class="stat-label">Unified Dashboard</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-tag">About the System</div>
+      <h2 class="section-title">Community concerns, handled with care</h2>
+      <p class="section-body">
+        i-Sumbong is a Java desktop application designed to streamline how barangay residents file and track community issues. From submitting a complaint with photo evidence to monitoring its resolution in real time — every step is clear, accountable, and digital.
+      </p>
+      <p class="section-body" style="margin-top:-28px;">
+        Barangay officials gain a powerful dashboard to review, assign, and resolve reports — enabling faster response times and data-driven governance.
+      </p>
+    </div>
+    <div class="about-visual">
+      <div class="window-mockup">
+        <div class="window-bar">
+          <div class="dot-r"></div>
+          <div class="dot-y"></div>
+          <div class="dot-g"></div>
+          <span class="window-title">i-Sumbong — Admin Dashboard</span>
+        </div>
+        <div class="window-body">
+          <div class="mock-row red"></div>
+          <div class="mock-row short"></div>
+          <div class="mock-row" style="width:85%"></div>
+          <div class="mock-status-row">
+            <span class="mock-badge badge-pending">Pending</span>
+            <span class="mock-badge badge-progress">In Progress</span>
+            <span class="mock-badge badge-resolved">Resolved</span>
+          </div>
+          <div style="height:16px"></div>
+          <div class="mock-row" style="width:90%; height:8px"></div>
+          <div class="mock-row short" style="height:8px"></div>
+          <div class="mock-row" style="width:75%; height:8px"></div>
+          <div class="mock-row" style="width:60%; height:8px"></div>
+          <div style="height:10px"></div>
+          <div class="mock-row red" style="height:8px; width:55%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- FEATURES -->
+<div class="features-section" id="features">
+  <div class="features-inner">
+    <div class="section-tag">Features</div>
+    <h2 class="section-title">Everything a barangay needs</h2>
+    <p class="section-body">Built for both residents and officials, with tools that make every report count.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔐</div>
+        <div class="feature-title">User Registration & Login</div>
+        <div class="feature-desc">Residents can securely create accounts and log in with role-based access — separate views for residents and barangay staff.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <div class="feature-title">Issue Reporting</div>
+        <div class="feature-desc">Submit complaints with full details — category, location, description, and optional photo attachments for clearer documentation.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📡</div>
+        <div class="feature-title">Real-Time Status Tracking</div>
+        <div class="feature-desc">Residents can monitor report progress from Pending → In Progress → Resolved with live status updates from officials.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🖥️</div>
+        <div class="feature-title">Admin Dashboard</div>
+        <div class="feature-desc">Barangay staff get a centralized view to manage all submissions, assign actions, and update issue statuses efficiently.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <div class="feature-title">Search & Filter</div>
+        <div class="feature-desc">Quickly locate specific reports by filtering across category, current status, date range, or resident name.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Report History & Analytics</div>
+        <div class="feature-desc">Generate summaries and analytics of reported issues to support transparency and informed decision-making by officials.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="section-tag">How It Works</div>
+  <h2 class="section-title">Four steps to resolution</h2>
+  <p class="section-body">From submission to resolution, every report follows a clear, trackable process.</p>
+
+  <div class="workflow-steps">
+    <div class="workflow-step">
+      <div class="step-num">01</div>
+      <div class="step-title">Register & Log In</div>
+      <div class="step-desc">Resident creates a secure account on the desktop app to begin filing issues.</div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">02</div>
+      <div class="step-title">Submit a Report</div>
+      <div class="step-desc">Fill in details, select a category, mark the location, and attach supporting images.</div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">03</div>
+      <div class="step-title">Officials Review</div>
+      <div class="step-desc">Barangay admin reviews the submission, assigns actions, and updates the status.</div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">04</div>
+      <div class="step-title">Track & Resolve</div>
+      <div class="step-desc">Residents watch the progress until the issue is marked Resolved and closed.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-tag">The Team</div>
+  <h2 class="section-title">Built by students, for the community</h2>
+  <p class="section-body">A dedicated team working to modernize barangay-level governance through technology.</p>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">LG</div>
+      <div class="team-name">Lehi O. Gomez</div>
+      <div class="team-role">Developer</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">AG</div>
+      <div class="team-name">Ajhay P. Gumaad</div>
+      <div class="team-role">Developer</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">MP</div>
+      <div class="team-name">Mary Angela C. Peralta</div>
+      <div class="team-role">Developer</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">MQ</div>
+      <div class="team-name">Mark Aaron D. Querol</div>
+      <div class="team-role">Developer</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CTA -->
+<div class="cta-section" id="download">
+  <div class="cta-inner">
+    <div>
+      <div class="section-tag">Download</div>
+      <h2 class="cta-title">Ready to bring your barangay online?</h2>
+      <p class="cta-desc">
+        Download the i-Sumbong Java desktop application and start managing community reports the modern way. Free for barangay use.
+      </p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#" class="btn-primary">⬇ Download for Windows</a>
+        <a href="#" class="btn-ghost">📖 User Guide</a>
+      </div>
+    </div>
+    <div class="requirements-card">
+      <div class="req-title">System Requirements</div>
+      <div class="req-item">
+        <div class="req-icon">☕</div>
+        <div>
+          <span class="req-label">Runtime</span>
+          <span class="req-value">Java JDK 11 or higher</span>
+        </div>
+      </div>
+      <div class="req-item">
+        <div class="req-icon">🖥️</div>
+        <div>
+          <span class="req-label">Platform</span>
+          <span class="req-value">Windows 10 / 11</span>
+        </div>
+      </div>
+      <div class="req-item">
+        <div class="req-icon">💾</div>
+        <div>
+          <span class="req-label">Storage</span>
+          <span class="req-value">~200 MB free space</span>
+        </div>
+      </div>
+      <div class="req-item">
+        <div class="req-icon">🧠</div>
+        <div>
+          <span class="req-label">Memory</span>
+          <span class="req-value">4 GB RAM minimum</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><span class="i">i</span>-Sumbong</div>
+  <div class="footer-copy">© 2024 Barangay Issue Reporting & Monitoring System. All rights reserved.</div>
+  <div class="footer-ph">
+    <span class="ph-flag">🇵🇭</span>
+    Made in the Philippines
+  </div>
+</footer>
+
+</body>
+</html>
