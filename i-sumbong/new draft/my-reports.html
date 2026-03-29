@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Reports | i-Sumbong</title>
+
+  <link rel="stylesheet" href="my-reports.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo">i-Sumbong</div>
+
+    <div class="topbar-right">
+      <button class="icon-button">
+        <span class="material-symbols-outlined">notifications</span>
+      </button>
+      <button class="icon-button">
+        <span class="material-symbols-outlined">account_circle</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="page-layout">
+    <aside class="sidebar">
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="#" class="sidebar-link active">
+        <span class="material-symbols-outlined filled">assignment</span>
+        <span>My Reports</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">add_circle</span>
+        <span>Submit</span>
+      </a>
+
+      <div class="sidebar-bottom">
+        <a href="#" class="sidebar-link">
+          <span class="material-symbols-outlined">person</span>
+          <span>Profile</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="page-header">
+        <h1>My Reports</h1>
+        <p>
+          Track and manage your submitted reports. Stay updated on the progress
+          of your community contributions.
+        </p>
+      </section>
+
+      <section class="toolbar">
+        <div class="filter-group">
+          <button class="filter-button active">All Reports</button>
+          <button class="filter-button">Pending</button>
+          <button class="filter-button">Resolved</button>
+        </div>
+
+        <div class="search-box">
+          <span class="material-symbols-outlined">search</span>
+          <input type="text" placeholder="Search reports..." />
+        </div>
+      </section>
+
+      <section class="table-card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Reference No.</th>
+                <th>Type</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th class="actions-col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="reference">MYH-2026-676767</td>
+                <td><span class="tag">Infrastructure</span></td>
+                <td>Broken streetlight on Main Ave</td>
+                <td>
+                  <span class="status-badge pending">
+                    <span class="status-dot"></span>
+                    Pending
+                  </span>
+                </td>
+                <td class="muted">March 13, 2026</td>
+                <td class="actions">
+                  <button class="table-icon-btn">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                  <button class="table-icon-btn delete">
+                    <span class="material-symbols-outlined">delete</span>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="reference">MYH-2026-676812</td>
+                <td><span class="tag">Complaint</span></td>
+                <td>Neighbor noise complaint</td>
+                <td>
+                  <span class="status-badge progress">
+                    <span class="status-dot"></span>
+                    In Progress
+                  </span>
+                </td>
+                <td class="muted">March 11, 2026</td>
+                <td class="actions">
+                  <button class="table-icon-btn">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                  <button class="table-icon-btn delete">
+                    <span class="material-symbols-outlined">delete</span>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="reference">MYH-2026-676501</td>
+                <td><span class="tag">Lost-and-Found</span></td>
+                <td>Found wallet at Central Park</td>
+                <td>
+                  <span class="status-badge resolved">
+                    <span class="status-dot"></span>
+                    Resolved
+                  </span>
+                </td>
+                <td class="muted">March 08, 2026</td>
+                <td class="actions">
+                  <button class="table-icon-btn">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                  <button class="table-icon-btn delete">
+                    <span class="material-symbols-outlined">delete</span>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="reference">MYH-2026-676422</td>
+                <td><span class="tag">Infrastructure</span></td>
+                <td>Pothole on 5th Street</td>
+                <td>
+                  <span class="status-badge scheduled">
+                    <span class="status-dot"></span>
+                    Scheduled
+                  </span>
+                </td>
+                <td class="muted">March 05, 2026</td>
+                <td class="actions">
+                  <button class="table-icon-btn">
+                    <span class="material-symbols-outlined">visibility</span>
+                  </button>
+                  <button class="table-icon-btn delete">
+                    <span class="material-symbols-outlined">delete</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination-bar">
+          <span class="pagination-text">Showing 1-4 of 12 reports</span>
+
+          <div class="pagination-buttons">
+            <button class="page-btn" disabled>
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card stat-card-primary">
+          <p class="stat-label">Total Reports</p>
+          <h2>12</h2>
+          <p class="stat-note">Submitted in 2026</p>
+          <span class="material-symbols-outlined stat-bg-icon">assignment</span>
+        </div>
+
+        <div class="stat-card stat-card-light">
+          <p class="stat-label">Resolved Cases</p>
+          <h2>8</h2>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 66%;"></div>
+          </div>
+        </div>
+
+        <div class="stat-card stat-card-warning">
+          <p class="stat-label">Pending Review</p>
+          <h2>3</h2>
+          <p class="stat-note">Average response: 48h</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="mobile-nav">
+    <a href="#" class="mobile-nav-link">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span>Dashboard</span>
+    </a>
+
+    <a href="#" class="mobile-nav-link active">
+      <span class="material-symbols-outlined filled">assignment</span>
+      <span>My Reports</span>
+    </a>
+
+    <a href="#" class="mobile-nav-link">
+      <span class="material-symbols-outlined">add_circle</span>
+      <span>Submit</span>
+    </a>
+
+    <a href="#" class="mobile-nav-link">
+      <span class="material-symbols-outlined">person</span>
+      <span>Profile</span>
+    </a>
+  </nav>
+</body>
+</html>

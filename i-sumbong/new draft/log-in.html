@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | i-Sumbong Civic Sentinel</title>
+
+  <!-- Montserrat Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <link rel="stylesheet" href="log-in.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-content">
+      <div class="brand">
+        <span class="brand-title">i-Sumbong</span>
+        <span class="brand-subtitle">Barangay Slogan Placeholder</span>
+      </div>
+
+      <button class="icon-button" type="button">
+        <span class="material-symbols-outlined">help_outline</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="login-wrapper">
+      <div class="hero-text">
+        <h1>Welcome Back!</h1>
+        <p>Sign in to access your barangay account</p>
+      </div>
+
+      <div class="login-card">
+        <form action="#" method="POST" class="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="name@example.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="••••••••"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <div class="form-options">
+            <label class="checkbox-group">
+              <input type="checkbox" id="remember-me" name="remember-me" />
+              <span>Remember me</span>
+            </label>
+
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <a href="dashboard.html" class="login-button">Log in</a>
+        </form>
+
+        <div class="register-text">
+          <p>
+            Don't have account?
+            <a href="#">Register here</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2024 i-Sumbong Civic Sentinel. Authoritative Community Care.</p>
+
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Support</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

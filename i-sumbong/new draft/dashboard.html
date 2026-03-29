@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i-Sumbong</title>
+
+  <a class="nav-link" href="submit-report.html">Submit Report</a>
+
+  <link rel="stylesheet" href="dashboard.css" />
+  
+    <link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-row">
+        <div class="brand-icon">
+          <span class="material-symbols-outlined">shield</span>
+        </div>
+        <div>
+          <h2 class="brand-title">Civic Sentinel</h2>
+          <p class="brand-subtitle">Official Portal</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-link active" href="dashboard.html">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Dashboard</span>
+      </a>
+      <a class="nav-link" href="report-category.html">
+        <span class="material-symbols-outlined">add_circle</span>
+        <span>Submit Report</span>
+      </a>
+      <a class="nav-link" href="my-reports.html">
+        <span class="material-symbols-outlined">history</span>
+        <span>My Reports</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-action">
+      <button class="emergency-btn">
+        <span class="material-symbols-outlined">emergency</span>
+        <span>Report Emergency</span>
+      </button>
+    </div>
+
+    <div class="sidebar-footer">
+      <a class="nav-link" href="#">
+        <span class="material-symbols-outlined">settings</span>
+        <span>Settings</span>
+      </a>
+      <a class="nav-link" href="#">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="material-symbols-outlined mobile-menu">menu</span>
+        <h1 class="app-title">i-Sumbong</h1>
+      </div>
+
+      <div class="topbar-right">
+        <div class="search-box">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="text" placeholder="Search reports..." />
+        </div>
+
+        <div class="topbar-actions">
+          <button class="icon-btn notification-btn">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notification-dot"></span>
+          </button>
+
+          <button class="icon-btn">
+            <span class="material-symbols-outlined">help</span>
+          </button>
+
+          <div class="divider"></div>
+
+          <button class="profile-btn">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaub14c1zER_dSbl978p4FgjBbM4ZAG1fnNvGqffkYTzuWJHojgDyjlAIyKZDXvmOIaU6v4gKIW1bGguLZw4H32ocZM1ftfMNUmAwWcPcQntlldzYjFXeD7fqoHBwooREvwQqQteRlGryw2_1OF1MTjpEecGq4j8PWmNIR6lRcOH1-eE4Zz3KXk0fJSISE8BKrHUIVHvOLd-Uj_07ih-VxlCo0y0pYaPIhgBQWiUupsMc91ZxmPZVM_8M-J-HtKqnvwEIn_wtdM_A7"
+              alt="User Profile Avatar"
+            />
+            <span class="profile-name">Juan Dela Cruz</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="page-header">
+        <div>
+          <h2 class="page-title">Dashboard</h2>
+          <p class="page-subtitle">
+            Welcome back, Juan Dela Cruz. Here's what's happening in your community today.
+          </p>
+        </div>
+
+        <div class="header-actions">
+          <button class="primary-btn">
+            <span class="material-symbols-outlined">add</span>
+            <span>New Report</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon stat-icon-primary">
+              <span class="material-symbols-outlined">description</span>
+            </div>
+            <span class="stat-label">Lifetime</span>
+          </div>
+          <div class="stat-value">0</div>
+          <div class="stat-name">Total Reports</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon stat-icon-warning">
+              <span class="material-symbols-outlined">pending</span>
+            </div>
+            <span class="stat-label">Action Required</span>
+          </div>
+          <div class="stat-value">0</div>
+          <div class="stat-name">Pending</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon stat-icon-soft">
+              <span class="material-symbols-outlined">calendar_today</span>
+            </div>
+            <span class="stat-label">In Progress</span>
+          </div>
+          <div class="stat-value">0</div>
+          <div class="stat-name">Scheduled</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon stat-icon-success">
+              <span class="material-symbols-outlined">check_circle</span>
+            </div>
+            <span class="stat-label">Completed</span>
+          </div>
+          <div class="stat-value">0</div>
+          <div class="stat-name">Resolved</div>
+        </div>
+      </section>
+
+      <section class="dashboard-layout">
+        <div class="main-column">
+          <div class="section-header">
+            <h3>Recent Activity</h3>
+            <button class="text-link">
+              <span>View All Reports</span>
+              <span class="material-symbols-outlined small-icon">arrow_forward</span>
+            </button>
+          </div>
+
+          <div class="empty-state">
+            <div class="empty-icon-wrap">
+              <span class="material-symbols-outlined empty-icon">inventory_2</span>
+            </div>
+            <h4>No Recent Reports Found</h4>
+            <p>
+              Your civic activity feed is currently empty. Start by submitting a report
+              for any barangay concerns or issues you've noticed.
+            </p>
+            <button class="dark-btn">Submit First Report</button>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-content">
+              <h4>Community Impact</h4>
+              <p>
+                Your reports help make Barangay San Lorenzo a safer place for everyone.
+              </p>
+              <div class="impact-tags">
+                <span>Top Issue: Street Lights</span>
+                <span>Resolved: 84%</span>
+              </div>
+            </div>
+            <div class="impact-icon">
+              <span class="material-symbols-outlined">analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-column">
+          <div class="status-card">
+            <h3>Barangay Status</h3>
+
+            <div class="status-item">
+              <div class="status-row">
+                <span>Response Rate</span>
+                <span>92%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill progress-fill-primary" style="width: 92%;"></div>
+              </div>
+            </div>
+
+            <div class="status-item">
+              <div class="status-row">
+                <span>Community Urgency</span>
+                <span class="status-low">Low</span>
+              </div>
+              <div class="progress-bar progress-muted">
+                <div class="progress-fill progress-fill-warning" style="width: 25%;"></div>
+              </div>
+            </div>
+
+            <div class="announcement">
+              <div class="announcement-icon">
+                <span class="material-symbols-outlined">announcement</span>
+              </div>
+              <div>
+                <p class="announcement-title">Announcement</p>
+                <p class="announcement-text">
+                  Scheduled maintenance for street drainage on Nov 25.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-card">
+            <div class="map-image-wrap">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPjdqjRYGDVZQJycxoZ7GvlWYEQ5Ev561wzbyhe6eJTuFfP1mShsYHFsITpmhwnhNRMXQsTVvC0ywthP3se7yaiBNjope4tfvlwvhgUGauyrn3Qaaxa0zTtllpjQSeXETVOar6khdusnUy_m3ISR1padSiR9j8kD2M1s37q5T78PBsLXIAIrsmAKIUKgBDMC5OZHKgLyUFEmS-SsFDwUc9p15k3ymkXCJnCGHA93PGOG2oLN3q9vqtABRDhzHh-f1U2Zi7MIJD0IQY"
+                alt="Map of Area"
+              />
+              <div class="map-overlay"></div>
+              <div class="map-pin">
+                <span class="material-symbols-outlined filled">location_on</span>
+              </div>
+            </div>
+            <div class="map-info">
+              <h4>Barangay Hall Location</h4>
+              <p>123 Civic Center St., Metro Manila</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="bottom-nav-item active">
+      <span class="material-symbols-outlined filled">dashboard</span>
+      <span>Dashboard</span>
+    </button>
+    <button class="bottom-nav-item">
+      <span class="material-symbols-outlined">add_circle</span>
+      <span>Report</span>
+    </button>
+    <button class="bottom-nav-item">
+      <span class="material-symbols-outlined">history</span>
+      <span>My Reports</span>
+    </button>
+    <button class="bottom-nav-item">
+      <span class="material-symbols-outlined">person</span>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+  <button class="fab">
+    <span class="material-symbols-outlined">emergency</span>
+  </button>
+</body>
+</html>

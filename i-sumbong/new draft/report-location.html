@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i-Sumbong | Submit Report - Location</title>
+
+  <link rel="stylesheet" href="report-location.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo">i-Sumbong</div>
+    </div>
+
+    <div class="topbar-right">
+      <button class="icon-btn">
+        <span class="material-symbols-outlined">notifications</span>
+      </button>
+      <button class="icon-btn">
+        <span class="material-symbols-outlined">help</span>
+      </button>
+      <div class="avatar">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3rj5SSjP9_fLLww7aIdkKxs0y8Fljwzm01kZl1KeoCtQVRgJPCwtyfvMJdJKZw-0OyJKXZxubvUZBhs6BOqj_4T8iJMWI-28eNTA1Gwtb9U-7NbXHXxuSz5TYZ1lAcXJVveY-Q7SQFdVhNzdCVLdZPrU9UNAXSXiFt7II3lNtWIYwvzn_2XIttmVsPQQQIe1uHvShKGs82g4tj1js6g5gd8uLzJsQUqlOdWHshMiiuLMqssTXtNj4NENbCzLoYu5kMKqkOiEpa_6C"
+          alt="User Profile Avatar"
+        />
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-row">
+        <div class="brand-icon">
+          <span class="material-symbols-outlined">account_balance</span>
+        </div>
+        <div>
+          <h2 class="brand-title">Civic Sentinel</h2>
+          <p class="brand-subtitle">Official Portal</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="#" class="sidebar-link active">
+        <span class="material-symbols-outlined filled">add_circle</span>
+        <span>Submit Report</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">history</span>
+        <span>My Reports</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">settings</span>
+        <span>Settings</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="content-wrap">
+      <section class="progress-section">
+        <div class="progress-header">
+          <h1>Submit Incident Report</h1>
+          <span class="step-badge">Step 3 of 4</span>
+        </div>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-bar done"></div>
+          <div class="progress-bar done"></div>
+          <div class="progress-bar current"></div>
+          <div class="progress-bar pending"></div>
+        </div>
+
+        <div class="progress-labels">
+          <span class="done-label">Report Details</span>
+          <span class="done-label">Evidence Upload</span>
+          <span class="current-label">Location</span>
+          <span class="pending-label">Review &amp; Submit</span>
+        </div>
+      </section>
+
+      <section class="location-grid">
+        <div class="left-column">
+          <div class="info-card">
+            <h3>Identify Location</h3>
+
+            <div class="form-group">
+              <label>Search Location</label>
+              <div class="input-wrap">
+                <span class="material-symbols-outlined input-icon">search</span>
+                <input type="text" placeholder="Search for a location..." />
+              </div>
+              <p class="helper-text">Or click on the map to mark the exact location</p>
+            </div>
+
+            <button class="gps-btn">
+              <span class="material-symbols-outlined filled">my_location</span>
+              <span>Use My Current Location</span>
+            </button>
+
+            <hr />
+
+            <div class="form-group">
+              <label>Confirmed Address</label>
+              <textarea rows="3" placeholder="123 Rizal Ave, Barangay San Jose..."></textarea>
+            </div>
+          </div>
+
+          <div class="tip-card">
+            <span class="material-symbols-outlined">info</span>
+            <div>
+              <p class="tip-title">Pro Tip</p>
+              <p class="tip-text">
+                Ensuring high location accuracy helps our response teams reach the
+                site 40% faster.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="map-card">
+            <div
+              class="map-background"
+              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCk7WGHzqPkStEPfhAII8aZsXohSgTD3-w7ArXteZK7VIxtipNa1eTrmmZulfUGUXNiycqUl2ina1k_ns6agKFIANCsrAikL3rduT1qyRXcXPyZcCv2FB7p7616Y_9uP1gfZ49hF2DoVPAch4oFLXnNwnjV8amrapO-K6G2SNKUKNXfFKXK4HM0MlRuszIxjOe2m2S7paKawSI2txX4O76VsfRPE8VEieo5LdU5oRDS7f-MFTsGtJWTR_fqcxHdYBVPofk2rDWdNGCg');"
+            ></div>
+
+            <div class="map-controls">
+              <button><span class="material-symbols-outlined">add</span></button>
+              <button><span class="material-symbols-outlined">remove</span></button>
+              <button class="layers-btn"><span class="material-symbols-outlined">layers</span></button>
+            </div>
+
+            <div class="map-pin">
+              <div class="pin-label">Report Site</div>
+              <span class="material-symbols-outlined filled">location_on</span>
+              <div class="pin-shadow"></div>
+            </div>
+
+            <div class="map-attribution">Map data ©2024 Civic Sentinel GIS</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bottom-actions">
+        <button class="prev-btn">
+          <span class="material-symbols-outlined">chevron_left</span>
+          <span>Previous Step</span>
+        </button>
+
+        <a href="report-review.html" class="next-btn">
+          <span>Next Step: Review</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <nav class="mobile-nav">
+    <button class="mobile-nav-link">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span>Dashboard</span>
+    </button>
+
+    <button class="mobile-nav-link active">
+      <span class="material-symbols-outlined filled">add_circle</span>
+      <span>Report</span>
+    </button>
+
+    <button class="mobile-nav-link">
+      <span class="material-symbols-outlined">history</span>
+      <span>My Reports</span>
+    </button>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i-Sumbong | Submit Report </title>
+
+  <link rel="stylesheet" href="report-review.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo">i-Sumbong</div>
+    </div>
+
+    <div class="topbar-right">
+      <nav class="top-nav">
+        <a href="#">Dashboard</a>
+        <a href="my-reports.html" class="active">Submit Report</a>
+        <a href="#">My Reports</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="icon-btn">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="icon-btn">
+          <span class="material-symbols-outlined">help</span>
+        </button>
+        <div class="avatar">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjn1bFdZJr4afUvqCixd1eNaATIJfW8zrJYIa8fBwgt91yNPXDOeskZuAbx2-fP0KDD12k1rKIGeXdocv67fTIDZ_a4W0CX4N1_i6KEZATyZgkVG270HIbK6K4j-gYFKI7Kekbj3kVs6fUoJpMVU7lX7mKAuP46ZbUOS88kWpvoUoyvgfpVgezeE_F5E3SCuNVkT-3OCxcQx2I09NuD0jFGVcDh24jfz2K6MxSFqcKgSOKzM9f5xiysXzl0f8jzcJONvU4YdkhypEY"
+            alt="User Profile Avatar"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-row">
+        <div class="brand-icon">
+          <span class="material-symbols-outlined">account_balance</span>
+        </div>
+        <div>
+          <h2 class="brand-title">Civic Sentinel</h2>
+          <p class="brand-subtitle">Official Portal</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="submission.html" class="sidebar-link active">
+        <span class="material-symbols-outlined filled">add_circle</span>
+        <span>Submit Report</span>
+      </a>
+
+      <a href="my-reports.html" class="sidebar-link">
+        <span class="material-symbols-outlined">history</span>
+        <span>My Reports</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">settings</span>
+        <span>Settings</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="content-wrap">
+      <section class="page-header">
+        <h1>Final Review</h1>
+        <p>Please confirm all details before submitting your report to the Barangay.</p>
+      </section>
+
+      <section class="stepper">
+        <div class="step-line"></div>
+
+        <div class="step completed">
+          <div class="step-circle">
+            <span class="material-symbols-outlined filled">check</span>
+          </div>
+          <span>Category</span>
+        </div>
+
+        <div class="step completed">
+          <div class="step-circle">
+            <span class="material-symbols-outlined filled">check</span>
+          </div>
+          <span>Details</span>
+        </div>
+
+        <div class="step completed">
+          <div class="step-circle">
+            <span class="material-symbols-outlined filled">check</span>
+          </div>
+          <span>Media</span>
+        </div>
+
+        <div class="step active">
+          <div class="step-circle">4</div>
+          <span>Review</span>
+        </div>
+      </section>
+
+      <section class="review-grid">
+        <div class="left-column">
+          <section class="content-card">
+            <div class="card-header">
+              <h3>Report Content</h3>
+              <span class="category-badge">Selected Category</span>
+            </div>
+
+            <div class="content-group">
+              <label>Category</label>
+              <p class="value-lg">Environmental Hazard (Waste Management)</p>
+            </div>
+
+            <div class="content-group">
+              <label>Issue Title</label>
+              <p class="value-lg">Uncollected Garbage Pile near Park Entrance</p>
+            </div>
+
+            <div class="content-group">
+              <label>Detailed Description</label>
+              <p class="value-muted">
+                There has been a significant accumulation of household waste at the
+                corner of San Jose St. and Rizal Ave. for the past 3 days. It is
+                blocking the sidewalk and attracting pests. Several residents have
+                expressed concern about the odor.
+              </p>
+            </div>
+
+            <div class="two-column-info">
+              <div class="content-group">
+                <label>Reported Respondent</label>
+                <p class="value-default italic">N/A (General Community Issue)</p>
+              </div>
+
+              <div class="content-group">
+                <label>Visibility State</label>
+                <p class="value-default">Public Report</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="confirm-card">
+            <div class="checkbox-wrap">
+              <input type="checkbox" id="confirm" checked />
+              <label for="confirm">
+                I confirm that all information provided is accurate to the best of
+                my knowledge. I understand my identity will be visible to barangay
+                officials and that submitting false reports may result in
+                administrative penalties.
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <div class="right-column">
+          <section class="location-card">
+            <div class="location-image-wrap">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdyL8Uv4r1zsoW0xOQjwr8LLMfVkVAUuiqVPGqV8pPYxwZRan6ffz-_wLky9PlbszvTUS33xq2D223OEiXTBKah3LZhvPDLjktslJ8xWFqpbkDVSh3oXTTQ42G1ZB4B3v1paksed9aEf3cQO7_jScRwdAZKBfwSUhXuR_nQ8Bg378uigzvMoKe-NN1KfhJarLYb6Ah8WV_bGT3CBDXXLwsY646hz5m-ZFeeBMOSIPHRqRcldMOdB7TgN9q-EQ8DLpbTSgZVZskufPS"
+                alt="Map Location"
+              />
+              <div class="location-overlay">
+                <div class="location-label">
+                  <span class="material-symbols-outlined">location_on</span>
+                  <span>San Jose St., Barangay 42</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="location-info">
+              <label>Coordinates</label>
+              <p>14.5995° N, 120.9842° E</p>
+            </div>
+          </section>
+
+          <section class="evidence-card">
+            <h3>Evidence (2 Files)</h3>
+
+            <div class="evidence-grid">
+              <div class="evidence-item">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrqFjvrKc01-3Cin4r-tAxEKmvlMNQJ_NDAR4Xs2lWbA7QZOOJAF8cDLBbZfmmDUuNzcorbNQ3hf-BFgvmgTP8WxgZ_wGjAVwse-CqfIIkc7gI3eO-gzS0Lu2_54ApOIoEqeFmLBe4Fa1TY4b7WfHG7L_xSDHEW459KDtZbW8Xx_V3CUjIiGGDbIY8b2j9tXWfbLwUupR4U5f_7mhArv-sZxRkbCba6t4qAy3keIlhghKoDzlVzLwuPanrNqTiJLBPeptsHU5_ba86"
+                  alt="Evidence Thumbnail 1"
+                />
+                <div class="evidence-overlay">
+                  <span class="material-symbols-outlined">zoom_in</span>
+                </div>
+              </div>
+
+              <div class="evidence-item">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp7TiRA04F314D8nVQdDwzXq-YK26QZ2odsAxcDCAA_gjbNghGMPw417BIVRu7C7HWwTeDeAMlr4wd7pFrs88PlP2ShUp3GxcYeprtTUNf7lTzG7hCSdTXAqHZ1FAlpyrhx9Jm6GFPddXEpV1vhloLOK0nZZW8xpXO_FpZpQVXlqsHyzOPfU2AZf2m1vaYgan4tfzT0ol-5DBPvWyubSMWZb9sl9_ad8dZrIBh0bj9EfIYuaOQ9xU-058l-bRhi5JPt6lXvU0xZ0LM"
+                  alt="Evidence Thumbnail 2"
+                />
+                <div class="evidence-overlay">
+                  <span class="material-symbols-outlined">zoom_in</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="alert-card">
+            <div class="alert-header">
+              <span class="material-symbols-outlined">warning</span>
+              <span>Public Safety</span>
+            </div>
+            <p>
+              This report will be flagged for immediate review due to "Waste
+              Management" escalation protocols.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <section class="bottom-actions">
+        <button class="prev-btn">
+          <span class="material-symbols-outlined">arrow_back</span>
+          <span>Previous Step</span>
+        </button>
+
+        <a href="submission.html" class="next-btn">
+          <span>Submit Report</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <nav class="mobile-nav">
+    <button class="mobile-nav-link">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span>Home</span>
+    </button>
+
+    <button class="mobile-nav-link active">
+      <span class="material-symbols-outlined filled">add_circle</span>
+      <span>Submit</span>
+    </button>
+
+    <button class="mobile-nav-link">
+      <span class="material-symbols-outlined">history</span>
+      <span>Reports</span>
+    </button>
+
+    <button class="mobile-nav-link">
+      <span class="material-symbols-outlined">person</span>
+      <span>Profile</span>
+    </button>
+  </nav>
+</body>
+</html>

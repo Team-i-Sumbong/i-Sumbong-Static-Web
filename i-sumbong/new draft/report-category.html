@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i-Sumbong | Submit Report</title>
+
+  <link rel="stylesheet" href="report-category.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo">i-Sumbong</div>
+    </div>
+
+      <div class="topbar-actions">
+        <button class="icon-btn">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="icon-btn">
+          <span class="material-symbols-outlined">help</span>
+        </button>
+        <div class="avatar">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCitdEAgB_5a4FZjFA_vEFS4IOxvf4P--L-SH68m70hL6fFZhIb08b9rGueZjgsE1NlWj4ADwzDxxvSeqW_Fk6-siaHPuXKkYuU7BQat6l1le5a58AqsAT6xFRpGrgMC7ZeMRChNJZbZzpFFfbbZAZkgMvubMz1l39ffGe8kHGn8l4jMVpcu5K8KR4a4cQmoXhgTuP52wHZ3GkWcmYCR9tahqxPWL3vsanU-tXwfvijf74S9g9bLYxp75BJ01JzUqV0wCw5ebrbXjd"
+            alt="User Profile Avatar"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-title">Civic Sentinel</div>
+      <div class="brand-subtitle">OFFICIAL PORTAL</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="#" class="sidebar-link active">
+        <span class="material-symbols-outlined">add_circle</span>
+        <span>Submit Report</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">history</span>
+        <span>My Reports</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">settings</span>
+        <span>Settings</span>
+      </a>
+
+      <a href="#" class="sidebar-link">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="content-wrap">
+      <section class="stepper">
+        <div class="step active">
+          <div class="step-circle">1</div>
+          <div class="step-text">
+            <p>Step 1</p>
+            <h3>Category Selection</h3>
+          </div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step inactive">
+          <div class="step-circle">2</div>
+          <div class="step-text">
+            <p>Step 2</p>
+            <h3>Describe Issue</h3>
+          </div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step inactive">
+          <div class="step-circle">3</div>
+          <div class="step-text">
+            <p>Step 3</p>
+            <h3>Location</h3>
+          </div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step inactive">
+          <div class="step-circle">4</div>
+          <div class="step-text">
+            <p>Step 4</p>
+            <h3>Review</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-header">
+        <h1>Select a Category</h1>
+        <p>
+          Choose the nature of the concern you would like to report. Your
+          selection helps us route your message to the appropriate department
+          for faster resolution.
+        </p>
+      </section>
+
+      <section class="category-grid">
+        <button class="category-card">
+          <div class="card-icon card-icon-primary">
+            <span class="material-symbols-outlined">record_voice_over</span>
+          </div>
+          <h4>Complaint</h4>
+          <p>
+            Report noise disturbances, neighbor disputes, or general nuisances
+            in your area.
+          </p>
+        </button>
+
+        <button class="category-card">
+          <div class="card-icon card-icon-secondary">
+            <span class="material-symbols-outlined">report_problem</span>
+          </div>
+          <h4>Incident</h4>
+          <p>
+            File reports for accidents, suspicious activities, or local crimes
+            requiring attention.
+          </p>
+        </button>
+
+        <button class="category-card">
+          <div class="card-icon card-icon-warning">
+            <span class="material-symbols-outlined">lightbulb</span>
+          </div>
+          <h4>Suggestion</h4>
+          <p>
+            Propose ideas for community improvement or share feedback on public
+            services.
+          </p>
+        </button>
+
+        <button class="category-card">
+          <div class="card-icon card-icon-muted">
+            <span class="material-symbols-outlined">construction</span>
+          </div>
+          <h4>Infrastructure</h4>
+          <p>
+            Alert authorities about damaged roads, clogged drainage, or faulty
+            street lights.
+          </p>
+        </button>
+
+        <button class="category-card">
+          <div class="card-icon card-icon-light">
+            <span class="material-symbols-outlined">search_check</span>
+          </div>
+          <h4>Lost and Found</h4>
+          <p>
+            Report missing items or announce items found within the community
+            boundaries.
+          </p>
+        </button>
+
+        <div class="help-card">
+          <h4>Not sure where to start?</h4>
+          <p>
+            Our automated system can help categorize your issue if you describe
+            it briefly first.
+          </p>
+          <button class="help-btn">
+            <span>Quick Help</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="subcategory-box">
+        <div>
+          <h5>Need a specific sub-category?</h5>
+          <p>Use the dropdown to find more detailed reporting options.</p>
+        </div>
+
+        <div class="select-wrap">
+          <select>
+            <option value="">Select category</option>
+            <option value="complaint-noise">Complaint: Noise Pollution</option>
+            <option value="complaint-trash">Complaint: Improper Trash Disposal</option>
+            <option value="infra-road">Infrastructure: Pothole / Road Damage</option>
+            <option value="infra-water">Infrastructure: Water Leakage</option>
+            <option value="incident-fire">Incident: Fire Hazard</option>
+          </select>
+          <span class="material-symbols-outlined select-icon">expand_more</span>
+        </div>
+      </section>
+
+      <section class="action-bar">
+
+        <a href="dashboard.html" class="cancel-link">
+          <span class="material-symbols-outlined">arrow_back</span>
+          <span>Cancel and Return</span>
+        </a>
+
+        <a href="report-details.html" class="next-btn">
+          <span>Next Step</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      
+    </div>
+  </main>
+
+    </p>
+  </div>
+</body>
+</html>
