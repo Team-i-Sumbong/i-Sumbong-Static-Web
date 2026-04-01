@@ -175,16 +175,114 @@ section {
   text-align: center;
   max-width: 700px;
   margin: auto;
+  background: var(--surface-lowest);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 40px 24px 36px 24px;
 }
 
 .about-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+  color: var(--primary);
 }
 
 .about-content p {
   line-height: 1.8;
   color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.about-content h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 32px 0 16px 0;
+  font-weight: 700;
+}
+
+.dev-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.dev-list li {
+  font-size: 1.08rem;
+  color: var(--text-muted);
+}
+
+.dev-list a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.dev-list a:hover {
+  color: var(--secondary);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.contact-form label {
+  align-self: flex-start;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 12px;
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background: var(--surface-lowest);
+  color: var(--text);
+  margin-bottom: 6px;
+  transition: border 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1.5px solid var(--primary);
+  outline: none;
+}
+
+.contact-form button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 12px 32px;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.contact-form button:hover {
+  background: var(--secondary);
+}
+
+.contact-form p {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.95em;
 }
 
 .features {
@@ -444,6 +542,14 @@ footer {
   .nav-links {
     gap: 14px;
     flex-wrap: wrap;
+  }
+
+  .about-content {
+    padding: 24px 6px 24px 6px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    max-width: 98vw;
   }
 }
 

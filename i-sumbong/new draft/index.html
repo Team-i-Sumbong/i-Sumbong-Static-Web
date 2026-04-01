@@ -6,7 +6,7 @@
   <title>i-Sumbong</title>
 
   <link rel="stylesheet" href="style.css">
-  <link
+  <linkgit
   href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
   rel="stylesheet"
 />
@@ -25,13 +25,14 @@
     <nav>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about"> About Us</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
+        <!-- <li><a href="#how-it-works">How It Works</a></li> -->
         <li><a href="#benefits">Benefits</a></li>
-        <li><a href="#feedback">Feedback</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="create-account.html"><u>Create Account</u></a></li>
+        <!-- <li><a href="#feedback">Feedback</a></li> -->
+        <li><a href="#about"> About Us</a></li>
+        <!-- <li><a href="#contact">Contact</a></li> -->
+        <!-- <li><a href="create-account.html"><u>Login/Sign-up</u></a></li> -->
+        <li><a href="log-in.html"><u>Login/Sign-up</u></a></li>
       </ul>
     </nav>
   </div>
@@ -61,18 +62,6 @@
 
 </section>
 
-<section id="about" class="about">
-
-  <div class="container about-content">
-
-    <h1>About Us</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </div>
-
-</section>
 
 <section id="features" class="features">
 
@@ -111,7 +100,7 @@
     </div>
 
   </div>
-
+  
 </section>
 
 <section id="how-it-works" class="how-works">
@@ -179,7 +168,7 @@
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-
+      
       <div class="benefit-box">
         <img src="blank.png" alt=" ">
         <p>
@@ -207,18 +196,18 @@
                 <div class="stars">★★★★★</div>
 
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </div>
+                  </p>
+                </div>
         </div>
 
-
+        
         <div class="feedback-card">
-            <img src="blank.png" alt=" ">
-
-            <div class="card-box">
-                <div class="stars">★★★★★</div>
+          <img src="blank.png" alt=" ">
+          
+          <div class="card-box">
+            <div class="stars">★★★★★</div>
 
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -226,8 +215,8 @@
                 </p>
             </div>
         </div>
-
-
+        
+        
         <div class="feedback-card">
             <img src="blank.png" alt="user">
 
@@ -235,15 +224,47 @@
                 <div class="stars">★★★★★</div>
 
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
             </div>
         </div>
 
     </div>
 
-</section>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-content">
+      <h1>About Us</h1>
+      <!-- <p>
+        <strong>i-Sumbong</strong> is a digital platform designed to bridge the gap between residents and barangay officials. The app streamlines the process of reporting community issues, enhances transparency, and enables efficient monitoring and resolution of concerns. By leveraging technology, i-Sumbong empowers citizens to actively participate in community governance and helps barangay officials respond more effectively to the needs of their constituents.
+      </p> -->
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quisquam iusto consequatur dolorum temporibus quia cumque sint provident unde aut facilis ea odit eum, non accusamus nesciunt ducimus libero dolorem mollitia velit natus consectetur. Quos architecto commodi, obcaecati minus quam eligendi, atque deleniti itaque ab nihil necessitatibus velit est, placeat exercitationem fugit! Voluptate reiciendis doloribus esse beatae repellendus, rerum excepturi.</p>
+      <h2>Meet the Developers</h2>
+      <ul class="dev-list">
+        <li><a href="https://portfolio.lehi.com" target="_blank" rel="noopener">Lehi Gomez</a> - Project Manager</li>
+        <li><a href="https://portfolio.ajhay.com" target="_blank" rel="noopener">Ajhay</a> - Java Lead Developer</li>
+        <li><a href="https://portfolio.angela.com" target="_blank" rel="noopener">Angela</a> - Web Lead Developer & Designer</li>
+        <li><a href="https://portfolio.aaron.com" target="_blank" rel="noopener">Aaron</a> - Lead Documentation / Developer</li>
+      </ul>
+
+      <h2>Contact Us</h2>
+      <form class="contact-form" action="mailto:isumbong@gmail.com" method="POST" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send</button>
+        <p style="font-size: 0.9em; color: #888;">This is a demo form. Your default email client will open to send the message.</p>
+      </form>
+    </div>
+  </section>
 
 </main>
 
