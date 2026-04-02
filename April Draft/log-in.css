@@ -139,6 +139,21 @@ a {
 
 .nav-auth {
   font-weight: 700;
+  color: #ffffff;
+  background: var(--primary);
+  padding: 10px 18px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-auth:hover,
+.nav-auth:focus-visible {
+  color: #ffffff;
+  background: var(--primary-dark);
+}
+
+.nav-auth::after {
+  display: none;
 }
 
 .main-content {
@@ -378,7 +393,7 @@ a {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr;
   gap: 24px;
 }
 
