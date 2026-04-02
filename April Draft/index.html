@@ -19,15 +19,25 @@
 <body>
   <header>
     <div class="container navbar">
-      <a class="logo" href="#home">i-Sumbong</a>
+      <a class="brand-block" href="#home">
+        <span class="logo">i-Sumbong</span>
+        <span class="brand-subtitle">Barangay issue reporting platform</span>
+      </a>
 
-      <nav>
+      <nav class="nav-center" aria-label="Promotional sections">
         <ul class="nav-links">
-          <li><a class="active-link" href="#home">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="team.html">Meet the Developers</a></li>
-          <li><a class="nav-cta" href="log-in.html">Login / Sign Up</a></li>
+          <li><a class="nav-link nav-home" href="#home">Home</a></li>
+          <li><a class="nav-link nav-features" href="#features">Features</a></li>
+          <li><a class="nav-link nav-how" href="#how-it-works">How it Works</a></li>
+          <li><a class="nav-link nav-benefits" href="#benefits">Benefits</a></li>
+          <li><a class="nav-link nav-about" href="#about">About</a></li>
+        </ul>
+      </nav>
+
+      <nav class="nav-right" aria-label="Primary actions">
+        <ul class="nav-links nav-links-right">
+          <li><a class="nav-link" href="team.html">Meet the Developers</a></li>
+          <li><a class="nav-link nav-auth" href="log-in.html">Login / Sign Up</a></li>
         </ul>
       </nav>
     </div>
@@ -190,7 +200,7 @@
       </div>
     </section>
 
-    <section class="benefits">
+    <section id="benefits" class="benefits">
       <div class="benefits-header">
         <div class="container">
           <p class="section-kicker">Benefits</p>
@@ -229,7 +239,7 @@
     <section id="about" class="about">
       <div class="container about-grid">
         <article class="about-panel">
-          <p class="section-kicker">About Us</p>
+          <p class="section-kicker">About</p>
           <h2>i-Sumbong is a digital bridge between residents and barangay officials.</h2>
           <p>
             The project is designed to improve how community concerns are reported, monitored, and responded to.
@@ -301,7 +311,7 @@
         <h4>Quick Links</h4>
         <p><a href="#home">Home</a></p>
         <p><a href="#features">Features</a></p>
-        <p><a href="#about">About Us</a></p>
+        <p><a href="#about">About</a></p>
         <p><a href="team.html">Meet the Developers</a></p>
       </div>
 
