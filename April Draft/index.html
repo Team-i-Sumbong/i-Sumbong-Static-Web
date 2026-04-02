@@ -36,7 +36,10 @@
       <nav class="nav-right" aria-label="Primary actions">
         <ul class="nav-links nav-links-right">
           <li><a class="nav-link" href="team.html">Meet the Developers</a></li>
-          <li><a class="nav-link nav-auth" href="log-in.html">Login / Sign Up</a></li>
+          <li class="nav-auth-group">
+            <a class="nav-link nav-auth" href="log-in.html">Login</a>
+            <a class="nav-helper-link" href="#get-started">New user? Create an account</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -54,7 +57,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-light" href="log-in.html">Start Reporting</a>
+            <a class="btn btn-light" href="#get-started">Get Started</a>
             <a class="btn btn-outline" href="#features">Learn More</a>
           </div>
 
@@ -75,7 +78,7 @@
         </div>
 
         <div class="hero-image">
-          <img src="example.jpg" alt="Residents and barangay officials using i-Sumbong">
+          <img src="https://picsum.photos/960/720" alt="Temporary placeholder image for the i-Sumbong promotional hero section">
         </div>
       </div>
     </section>
@@ -289,7 +292,7 @@
       </div>
     </section>
 
-    <section class="final-cta">
+    <section id="get-started" class="final-cta">
       <div class="container">
         <div class="cta-panel">
           <p class="section-kicker">Get Started</p>
@@ -300,8 +303,11 @@
           </p>
           <div class="cta-actions">
             <a class="btn btn-primary" href="create-account.html">Create an Account</a>
-            <a class="btn btn-primary" href="log-in.html">Log In</a>
           </div>
+          <p class="cta-secondary-link">
+            Already have an account?
+            <a href="log-in.html">Login instead</a>
+          </p>
         </div>
       </div>
     </section>
