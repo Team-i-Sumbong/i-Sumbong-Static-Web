@@ -297,7 +297,7 @@ section {
 .btn-light,
 .btn-primary {
   background: var(--primary);
-  color: #ffffff;
+  color: var(--accent);
   box-shadow: var(--shadow-md);
 }
 
@@ -310,12 +310,15 @@ section {
 
 .btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.45);
-  color: #ffffff;
 }
 
 .btn-outline:hover,
 .btn-outline:focus-visible {
   background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-light {
+  color: var(--accent)
 }
 
 .hero-highlights {
