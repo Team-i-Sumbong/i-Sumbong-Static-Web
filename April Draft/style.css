@@ -27,7 +27,7 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 30px;
+  scroll-margin-top: 90px;
 }
 
 body {
@@ -100,6 +100,17 @@ header {
 .nav-right {
   display: flex;
   justify-content: flex-end;
+}
+
+.nav-links-right {
+  gap: 22px;
+}
+
+.nav-auth-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
 .nav-links {
@@ -177,6 +188,20 @@ body:has(#about:target) .nav-about::after {
 
 .nav-auth::after {
   display: none;
+}
+
+.nav-helper-link {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-helper-link:hover,
+.nav-helper-link:focus-visible {
+  color: #c58c00;
+  text-decoration: underline;
 }
 
 main {
@@ -550,6 +575,22 @@ section {
   margin-top: 28px;
 }
 
+.cta-secondary-link {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cta-secondary-link a {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cta-secondary-link a:hover,
+.cta-secondary-link a:focus-visible {
+  text-decoration: underline;
+}
+
 .about-grid,
 .contact-grid {
   display: grid;
@@ -760,6 +801,10 @@ footer {
   .nav-center,
   .nav-right {
     justify-content: flex-start;
+  }
+
+  .nav-auth-group {
+    align-items: flex-start;
   }
 
   .hero-text h1 {
