@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --surface: #f5f7fb;
+  --surface-card: #ffffff;
+  --surface-soft: #eef2f9;
+  --text: #172033;
+  --text-muted: #576074;
+  --primary: #102e73;
+  --primary-dark: #0a1d48;
+  --accent: #f2b705;
+  --outline: #d8dfec;
+  --shadow-sm: 0 10px 30px rgba(16, 46, 115, 0.08);
+  --radius-md: 18px;
+  --radius-lg: 26px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(242, 183, 5, 0.14), transparent 24%),
+    linear-gradient(180deg, #f8fbff 0%, #edf2fb 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(980px, 92%);
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(216, 223, 236, 0.9);
+}
+
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 0;
+}
+
+.brand {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--primary);
+}
+
+.brand-subtitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.topbar-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.topbar-nav a:hover,
+.topbar-nav a:focus-visible {
+  color: var(--primary);
+}
+
+.topbar-cta {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #ffffff !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.main-content {
+  flex: 1;
+  padding: 64px 0;
+}
+
+.hero-card,
+.content-card {
+  background: var(--surface-card);
+  border: 1px solid rgba(216, 223, 236, 0.9);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-card {
+  padding: 36px;
+  margin-bottom: 22px;
+  background: linear-gradient(145deg, rgba(16, 46, 115, 0.97) 0%, rgba(24, 72, 178, 0.94) 100%);
+  color: #ffffff;
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.hero-card h1 {
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin-bottom: 14px;
+}
+
+.hero-card p {
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.7;
+}
+
+.content-card {
+  padding: 34px;
+}
+
+.meta {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.policy-section + .policy-section {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--outline);
+}
+
+.policy-section h2 {
+  font-size: 1.35rem;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.policy-section p,
+.policy-section li {
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.policy-section ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.policy-section li + li {
+  margin-top: 8px;
+}
+
+.footer {
+  background: var(--primary-dark);
+  color: #ffffff;
+  padding: 28px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.footer-copy,
+.footer-links a {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: #ffffff;
+}
+
+@media (max-width: 720px) {
+  .topbar-content,
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-card,
+  .content-card {
+    padding: 24px;
+  }
+}
