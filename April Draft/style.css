@@ -93,6 +93,14 @@ header {
   transform: translateY(-1px);
 }
 
+.nav-links .active-link {
+  color: var(--primary);
+  background: var(--accent-soft);
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(242, 183, 5, 0.28);
+}
+
 .nav-cta {
   background: var(--primary);
   color: #ffffff !important;
@@ -210,6 +218,17 @@ section {
 .btn-outline:hover,
 .btn-outline:focus-visible {
   background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .hero-highlights {
@@ -420,6 +439,40 @@ section {
 
 .about {
   background: linear-gradient(180deg, var(--surface) 0%, #eef3ff 100%);
+}
+
+.final-cta {
+  padding: 24px 0 88px;
+}
+
+.cta-panel {
+  background: linear-gradient(145deg, rgba(16, 46, 115, 0.98) 0%, rgba(24, 72, 178, 0.94) 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 38px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.cta-panel h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: 14px;
+}
+
+.cta-copy {
+  max-width: 720px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
 }
 
 .about-grid,
@@ -642,6 +695,15 @@ footer {
   .btn,
   .highlight-pill {
     width: 100%;
+  }
+
+  .cta-panel {
+    padding: 28px 24px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .issue-cards,
