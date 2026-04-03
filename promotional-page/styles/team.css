@@ -21,6 +21,12 @@
   --radius-lg: 26px;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 14px;
+
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -457,6 +463,7 @@ textarea {
 }
 
 @media (max-width: 720px) {
+
   .topbar-content,
   .footer-bottom {
     flex-direction: column;

@@ -29,13 +29,19 @@
         <a class="nav-link" href="index.html#features">Features</a>
         <a class="nav-link" href="index.html#how-it-works">How it Works</a>
         <a class="nav-link" href="index.html#about">About</a>
-        <a class="nav-link" href="team.html">Meet the Developers</a>
+        <a class="nav-link" href="team.html">Developers</a>
       </nav>
 
       <nav class="topbar-nav nav-right" aria-label="Primary actions">
         <div class="nav-auth-group">
-          <a class="nav-link nav-auth" href="log-in.html">Login</a>
-          <a class="nav-helper-link active-helper-link" href="create-account.html">New user? Create an account</a>
+          <button
+            type="submit"
+            form="registration-form"
+            class="nav-link active-link nav-auth"
+          >
+            Create Account
+          </button>
+          <a class="nav-helper-link" href="log-in.html">Already have an account? Login instead</a>
         </div>
       </nav>
     </div>
@@ -94,7 +100,7 @@
           <p>Fill out the required information below to set up your i-Sumbong account.</p>
         </div>
 
-        <form action="log-in.html" method="GET" class="signup-form">
+        <form id="registration-form" action="log-in.html" method="GET" class="signup-form">
           <div class="form-grid">
             <div class="form-group">
               <label for="first-name">First Name</label>
