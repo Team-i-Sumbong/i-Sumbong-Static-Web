@@ -19,17 +19,17 @@
 <body>
   <header class="topbar">
     <div class="container topbar-content">
-      <a class="brand-block" href="index.html#home">
+      <a class="brand-block" href="../promotional-page/index.html#home">
         <span class="brand-title">i-Sumbong</span>
         <span class="brand-subtitle">Barangay issue reporting platform</span>
       </a>
 
       <nav class="topbar-nav nav-center" aria-label="Promotional sections">
-        <a class="nav-link" href="index.html#home">Home</a>
-        <a class="nav-link" href="index.html#features">Features</a>
-        <a class="nav-link" href="index.html#how-it-works">How it Works</a>
-        <a class="nav-link" href="index.html#about">About</a>
-        <a class="nav-link" href="team.html">Developers</a>
+        <a class="nav-link" href="../promotional-page/index.html#home">Home</a>
+        <a class="nav-link" href="../promotional-page/index.html#features">Features</a>
+        <a class="nav-link" href="../promotional-page/index.html#how-it-works">How it Works</a>
+        <a class="nav-link" href="../promotional-page/index.html#about">About</a>
+        <a class="nav-link" href="../promotional-page/team.html">Developers</a>
       </nav>
 
       <nav class="topbar-nav nav-right" aria-label="Primary actions">
@@ -88,7 +88,7 @@
           <p>Enter your account credentials to access the i-Sumbong dashboard.</p>
         </div>
 
-        <form id="login-form" action="dashboard.html" method="GET" class="login-form">
+        <form id="login-form" action="../resident-dashboard/dashboard.html" method="GET" class="login-form">
           <div class="form-group">
             <label for="email">Email Address</label>
             <input
@@ -101,6 +101,14 @@
             >
           </div>
 
+          <div class="form-group">
+            <label for="account-type">Account Type</label>
+            <select id="account-type" name="account-type" required>
+              <option value="" selected disabled>Select your account type</option>
+              <option value="resident">Resident</option>
+              <option value="admin">Admin / Barangay Staff</option>
+            </select>
+          </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input
@@ -144,11 +152,11 @@
 
       <div>
         <h4>Quick Links</h4>
-        <p><a href="index.html#home">Home</a></p>
-        <p><a href="index.html#features">Features</a></p>
-        <p><a href="index.html#how-it-works">How it Works</a></p>
-        <p><a href="index.html#benefits">Benefits</a></p>
-        <p><a href="index.html#about">About</a></p>
+        <p><a href="../promotional-page/index.html#home">Home</a></p>
+        <p><a href="../promotional-page/index.html#features">Features</a></p>
+        <p><a href="../promotional-page/index.html#how-it-works">How it Works</a></p>
+        <p><a href="../promotional-page/index.html#benefits">Benefits</a></p>
+        <p><a href="../promotional-page/index.html#about">About</a></p>
       </div>
 
       <div>
@@ -160,9 +168,9 @@
 
       <div>
         <h4>Meet the Developers</h4>
-        <p><a href="team.html">Our Team Page</a></p>
-        <p><a href="team.html#contact-team">Send a Message</a></p>
-        <p><a href="team.html#developer-profiles">View Developer Roles</a></p>
+        <p><a href="../promotional-page/team.html">Our Team Page</a></p>
+        <p><a href="../promotional-page/team.html#contact-team">Send a Message</a></p>
+        <p><a href="../promotional-page/team.html#developer-profiles">View Developer Roles</a></p>
       </div>
     </div>
 
@@ -170,10 +178,23 @@
       <p>&copy; 2026 i-Sumbong. All rights reserved.</p>
 
       <div>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms</a>
+        <a href="../promotional-page/privacy.html">Privacy Policy</a>
+        <a href="../promotional-page/terms.html">Terms</a>
       </div>
     </div>
   </footer>
-</body>
+  <script>
+    const loginForm = document.getElementById("login-form");
+    const accountTypeField = document.getElementById("account-type");
+
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const targetPage = accountTypeField.value === "admin"
+        ? "../admin-dashboard/dashboard.html"
+        : "../resident-dashboard/dashboard.html";
+
+      window.location.href = targetPage;
+    });
+  </script></body>
 </html>
