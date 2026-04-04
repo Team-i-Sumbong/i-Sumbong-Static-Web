@@ -6,118 +6,52 @@
   <title>Admin Dashboard | i-Sumbong</title>
   <link rel="stylesheet" href="styles/common.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" rel="stylesheet" />
 </head>
 <body>
   <div class="layout">
     <header class="topbar">
-      <div>
-        <p class="brand-title">i-Sumbong</p>
-        <p class="brand-subtitle">Admin dashboard</p>
-      </div>
-      <div class="topbar-user">Maria Lopez â€¢ Barangay Staff</div>
+      <div><p class="brand-title">i-Sumbong</p><p class="brand-subtitle">Admin dashboard</p></div>
+      <div class="topbar-user"><span class="material-symbols-outlined" aria-hidden="true">badge</span><span>Maria Lopez</span><span>•</span><span>Barangay Staff</span></div>
     </header>
-
     <aside class="sidebar">
       <nav class="nav-list">
-        <a href="dashboard.html" class="nav-link active">Dashboard</a>
-        <a href="reports.html" class="nav-link">Reports</a>
-        <a href="announcements.html" class="nav-link">Announcements</a>
-        <a href="settings.html" class="nav-link">Settings</a>
+        <a href="dashboard.html" class="nav-link active"><span class="material-symbols-outlined nav-icon" aria-hidden="true">dashboard</span><span>Dashboard</span></a>
+        <a href="reports.html" class="nav-link"><span class="material-symbols-outlined nav-icon" aria-hidden="true">article</span><span>Reports</span></a>
+        <a href="announcements.html" class="nav-link"><span class="material-symbols-outlined nav-icon" aria-hidden="true">campaign</span><span>Announcements</span></a>
+        <a href="settings.html" class="nav-link"><span class="material-symbols-outlined nav-icon" aria-hidden="true">settings</span><span>Settings</span></a>
       </nav>
       <div class="nav-footer nav-list">
-        <a href="../resident-dashboard/dashboard.html" class="nav-link">Open Resident View</a>
-        <a href="../login-and-create-account/log-in.html" class="nav-link">Logout</a>
+        <a href="../resident-dashboard/dashboard.html" class="nav-link"><span class="material-symbols-outlined nav-icon" aria-hidden="true">person</span><span>Open Resident View</span></a>
+        <a href="../login-and-create-account/log-in.html" class="nav-link"><span class="material-symbols-outlined nav-icon" aria-hidden="true">logout</span><span>Logout</span></a>
       </div>
     </aside>
-
     <main class="content">
       <section class="page-header">
         <p class="page-kicker">Overview</p>
-        <h1>Simple staff dashboard</h1>
+        <div class="page-title-row"><span class="material-symbols-outlined" aria-hidden="true">monitoring</span><h1>Simple staff dashboard</h1></div>
         <p>This version is intentionally basic so it can be rebuilt more easily in Java after the static site is finalized.</p>
       </section>
-
       <section class="card-grid">
-        <article class="card">
-          <p class="card-label">Total Reports</p>
-          <p class="card-value">148</p>
-          <p class="card-note">All recorded reports</p>
-        </article>
-        <article class="card">
-          <p class="card-label">Pending</p>
-          <p class="card-value">18</p>
-          <p class="card-note">Need review today</p>
-        </article>
-        <article class="card">
-          <p class="card-label">Resolved</p>
-          <p class="card-value">88</p>
-          <p class="card-note">Closed this month</p>
-        </article>
+        <article class="card"><div class="metric-head"><p class="card-label">Total Reports</p><span class="material-symbols-outlined metric-icon" aria-hidden="true">inbox</span></div><p class="card-value">148</p><p class="card-note">All recorded reports</p></article>
+        <article class="card"><div class="metric-head"><p class="card-label">Pending</p><span class="material-symbols-outlined metric-icon" aria-hidden="true">pending_actions</span></div><p class="card-value">18</p><p class="card-note">Need review today</p></article>
+        <article class="card"><div class="metric-head"><p class="card-label">Resolved</p><span class="material-symbols-outlined metric-icon" aria-hidden="true">verified</span></div><p class="card-value">88</p><p class="card-note">Closed this month</p></article>
       </section>
-
       <section class="content-grid">
         <article class="table-panel">
-          <div class="panel-header">
-            <div>
-              <p class="section-label">Reports</p>
-              <h2>Recent report list</h2>
-            </div>
-            <a href="reports.html" class="button-secondary">Open Reports</a>
-          </div>
+          <div class="panel-header"><div><p class="section-label">Reports</p><div class="panel-heading-inline"><span class="material-symbols-outlined" aria-hidden="true">description</span><h2>Recent report list</h2></div></div><a href="reports.html" class="button-secondary"><span class="material-symbols-outlined" aria-hidden="true">folder_open</span><span>Open Reports</span></a></div>
           <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Area</th>
-                <th>Status</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Title</th><th>Area</th><th>Status</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Flooded drainage near Mabini Street</td>
-                <td>Purok 3</td>
-                <td><span class="status pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td>Noise complaint during late hours</td>
-                <td>Sampaguita Zone</td>
-                <td><span class="status progress">In Progress</span></td>
-              </tr>
-              <tr>
-                <td>Broken lamp post near covered court</td>
-                <td>Rizal Extension</td>
-                <td><span class="status resolved">Resolved</span></td>
-              </tr>
+              <tr><td><a href="report-view-window.html" target="_blank" rel="noopener noreferrer" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Flooded drainage near Mabini Street</span></a></td><td>Purok 3</td><td><span class="status pending">Pending</span></td></tr>
+              <tr><td><a href="report-view-window.html" target="_blank" rel="noopener noreferrer" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Noise complaint during late hours</span></a></td><td>Sampaguita Zone</td><td><span class="status progress">In Progress</span></td></tr>
+              <tr><td><a href="report-view-window.html" target="_blank" rel="noopener noreferrer" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Broken lamp post near covered court</span></a></td><td>Rizal Extension</td><td><span class="status resolved">Resolved</span></td></tr>
             </tbody>
           </table>
         </article>
-
         <div class="simple-list">
-          <article class="panel">
-            <div class="panel-header">
-              <div>
-                <p class="section-label">Announcements</p>
-                <h2>Latest notice</h2>
-              </div>
-            </div>
-            <p class="muted">Drainage cleanup operations will begin on April 6 in the affected zones.</p>
-            <div class="button-row">
-              <a href="announcements.html" class="button">Manage Announcements</a>
-            </div>
-          </article>
-
-          <article class="panel">
-            <div class="panel-header">
-              <div>
-                <p class="section-label">Settings</p>
-                <h2>Account and system</h2>
-              </div>
-            </div>
-            <p class="muted">Update account details and simple system preferences.</p>
-            <div class="button-row">
-              <a href="settings.html" class="button-secondary">Open Settings</a>
-            </div>
-          </article>
+          <article class="panel"><div class="panel-header"><div><p class="section-label">Announcements</p><div class="panel-heading-inline"><span class="material-symbols-outlined" aria-hidden="true">campaign</span><h2>Latest notice</h2></div></div></div><p class="muted">Drainage cleanup operations will begin on April 6 in the affected zones.</p><div class="button-row"><a href="announcements.html" class="button"><span class="material-symbols-outlined" aria-hidden="true">edit_square</span><span>Manage Announcements</span></a></div></article>
+          <article class="panel"><div class="panel-header"><div><p class="section-label">Settings</p><div class="panel-heading-inline"><span class="material-symbols-outlined" aria-hidden="true">tune</span><h2>Account and system</h2></div></div></div><p class="muted">Update account details and simple system preferences.</p><div class="button-row"><a href="settings.html" class="button-secondary"><span class="material-symbols-outlined" aria-hidden="true">settings</span><span>Open Settings</span></a></div></article>
         </div>
       </section>
     </main>
