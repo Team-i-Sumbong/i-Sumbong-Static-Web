@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resident Report Form | i-Sumbong</title>
+  <link rel="stylesheet" href="../css/common.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="layout">
+    <header class="topbar">
+      <div><p class="brand-title">i-Sumbong</p><p class="brand-subtitle">Resident report form</p></div>
+      <div class="topbar-user">Juan Dela Cruz • Resident</div>
+    </header>
+    <aside class="sidebar">
+      <nav class="nav-list">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="reports.html" class="nav-link active">Reports</a>
+        <a href="announcements.html" class="nav-link">Announcements</a>
+        <a href="settings.html" class="nav-link">Settings</a>
+      </nav>
+      <div class="nav-footer nav-list">
+        <a href="../../admin/html/dashboard.html" class="nav-link">Open Staff View</a>
+        <a href="../../shared/html/login.html" class="nav-link">Logout</a>
+      </div>
+    </aside>
+    <main class="content">
+      <section class="page-header">
+        <p class="page-kicker">Submit Report</p>
+        <h1>Simple report form</h1>
+        <p>This version uses only basic fields so the same screen can be recreated more easily in Java.</p>
+      </section>
+      <section class="panel">
+        <div class="form-grid">
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category">
+              <option>Infrastructure</option>
+              <option>Complaint</option>
+              <option>Incident</option>
+              <option>Sanitation</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="title">Report Title</label>
+            <input id="title" type="text" placeholder="Enter short report title" />
+          </div>
+          <div class="field">
+            <label for="location">Location</label>
+            <input id="location" type="text" placeholder="Enter location or area" />
+          </div>
+          <div class="field">
+            <label for="details">Details</label>
+            <textarea id="details" placeholder="Describe the concern clearly"></textarea>
+          </div>
+        </div>
+        <div class="button-row">
+          <a href="reports.html" class="button">Submit</a>
+          <a href="dashboard.html" class="button-secondary">Cancel</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

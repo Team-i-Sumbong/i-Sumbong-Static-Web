@@ -3,232 +3,147 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard | i-Sumbong</title>
-
+  <title>Barangay Dashboard | i-Sumbong</title>
   <link rel="stylesheet" href="dashboard.css" />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header class="topbar">
-    <div class="topbar-left">
+    <div class="brand-block">
       <div class="logo">i-Sumbong</div>
+      <p class="brand-subtitle">Barangay operations dashboard</p>
     </div>
-
-    <div class="topbar-actions">
-      <button class="icon-btn" type="button" aria-label="Notifications">
-        <span class="material-symbols-outlined">notifications</span>
-      </button>
-      <button class="icon-btn" type="button" aria-label="Help">
-        <span class="material-symbols-outlined">help</span>
-      </button>
-      <div class="avatar">
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCitdEAgB_5a4FZjFA_vEFS4IOxvf4P--L-SH68m70hL6fFZhIb08b9rGueZjgsE1NlWj4ADwzDxxvSeqW_Fk6-siaHPuXKkYuU7BQat6l1le5a58AqsAT6xFRpGrgMC7ZeMRChNJZbZzpFFfbbZAZkgMvubMz1l39ffGe8kHGn8l4jMVpcu5K8KR4a4cQmoXhgTuP52wHZ3GkWcmYCR9tahqxPWL3vsanU-tXwfvijf74S9g9bLYxp75BJ01JzUqV0wCw5ebrbXjd"
-          alt="Resident profile avatar"
-        />
+    <div class="topbar-right">
+      <div class="date-chip"><span class="material-symbols-outlined">calendar_month</span><span>April 4, 2026</span></div>
+      <label class="search-box" aria-label="Search reports">
+        <span class="material-symbols-outlined">search</span>
+        <input type="search" placeholder="Search reports, areas, or categories" />
+      </label>
+      <button class="icon-btn" type="button" aria-label="Notifications"><span class="material-symbols-outlined">notifications</span></button>
+      <div class="profile-chip">
+        <div class="avatar">ML</div>
+        <div>
+          <p class="profile-name">Maria Lopez</p>
+          <p class="profile-role">Barangay Secretary</p>
+        </div>
       </div>
     </div>
   </header>
 
   <aside class="sidebar">
-    <nav class="sidebar-nav" aria-label="Resident navigation">
-      <a href="dashboard.html" class="sidebar-link active">
-        <span class="material-symbols-outlined">dashboard</span>
-        <span>Dashboard</span>
-      </a>
-
-      <a href="report-category.html" class="sidebar-link">
-        <span class="material-symbols-outlined">add_circle</span>
-        <span>Submit Report</span>
-      </a>
-
-      <a href="my-reports.html" class="sidebar-link">
-        <span class="material-symbols-outlined">history</span>
-        <span>My Reports</span>
-      </a>
+    <div class="sidebar-heading">
+      <p class="sidebar-kicker">Main menu</p>
+      <h2>Staff Portal</h2>
+    </div>
+    <nav class="sidebar-nav" aria-label="Staff navigation">
+      <a href="dashboard.html" class="sidebar-link active"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+      <a href="#" class="sidebar-link"><span class="material-symbols-outlined">assignment</span><span>Reports</span></a>
+      <a href="#" class="sidebar-link"><span class="material-symbols-outlined">category</span><span>Categories</span></a>
+      <a href="#" class="sidebar-link"><span class="material-symbols-outlined">campaign</span><span>Announcements</span></a>
+      <a href="#" class="sidebar-link"><span class="material-symbols-outlined">analytics</span><span>Analytics</span></a>
+      <a href="#" class="sidebar-link"><span class="material-symbols-outlined">settings</span><span>Settings</span></a>
     </nav>
-
     <div class="sidebar-footer">
-      <a href="#" class="sidebar-link">
-        <span class="material-symbols-outlined">settings</span>
-        <span>Settings</span>
-      </a>
-
-      <a href="#" class="sidebar-link">
-        <span class="material-symbols-outlined">logout</span>
-        <span>Logout</span>
-      </a>
+      <a href="resident-dashboard.html" class="sidebar-link resident-link"><span class="material-symbols-outlined">person</span><span>Open Resident View</span></a>
+      <a href="#" class="sidebar-link"><span class="material-symbols-outlined">logout</span><span>Logout</span></a>
     </div>
   </aside>
 
   <main class="main-content">
     <div class="content-wrap">
-      <section class="update-banner">
-        <div>
-          <p class="eyebrow">Resident update</p>
-          <h2>Street lighting remains the most reported concern this week.</h2>
-          <p class="banner-text">
-            Barangay staff are continuing checks on lighting, drainage, and road concerns across nearby streets.
-          </p>
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Operations overview</p>
+          <h1>Monitor incoming reports and keep community action organized.</h1>
+          <p class="hero-text">This dashboard gives barangay staff a quick view of unresolved issues, urgent cases, and public advisories without crowding the screen.</p>
         </div>
-        <div class="banner-meta">
-          <span class="banner-chip">Latest community note</span>
-          <span class="banner-chip">March 25 maintenance advisory</span>
+        <div class="hero-actions">
+          <a href="#" class="primary-link">Review New Reports</a>
+          <a href="#" class="secondary-link">Post Announcement</a>
         </div>
       </section>
 
-      <section class="welcome-card">
-        <div class="welcome-copy">
-          <p class="eyebrow">Dashboard</p>
-          <h1>Welcome back, Juan Dela Cruz.</h1>
-          <p class="hero-text">
-            Review your submitted concerns and send a new report when needed.
-          </p>
-        </div>
+      <section class="stats-grid" aria-label="Dashboard summary">
+        <article class="stat-card stat-card-primary"><p class="stat-label">Total Reports</p><h2>148</h2><p class="stat-note">All submissions recorded this month</p></article>
+        <article class="stat-card stat-card-warning"><p class="stat-label">Pending Review</p><h2>18</h2><p class="stat-note">Needs validation within 24 hours</p></article>
+        <article class="stat-card stat-card-progress"><p class="stat-label">In Progress</p><h2>42</h2><p class="stat-note">Currently assigned to barangay staff</p></article>
+        <article class="stat-card stat-card-success"><p class="stat-label">Resolved</p><h2>88</h2><p class="stat-note">Closed and updated in the system</p></article>
       </section>
 
-      <section class="stats-grid" aria-label="Resident report summary">
-        <article class="stat-card stat-card-primary">
-          <p class="stat-label">Total reports</p>
-          <h2>12</h2>
-          <p class="stat-note">Submitted reports</p>
-          <span class="material-symbols-outlined stat-icon">assignment</span>
-        </article>
-
-        <article class="stat-card stat-card-light">
-          <p class="stat-label">Pending review</p>
-          <h2>3</h2>
-          <p class="stat-note">Awaiting review</p>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 25%;"></div>
-          </div>
-        </article>
-
-        <article class="stat-card stat-card-success">
-          <p class="stat-label">Resolved</p>
-          <h2>8</h2>
-          <p class="stat-note">Completed reports</p>
-        </article>
-      </section>
-
-      <section class="cta-row" aria-label="Resident actions">
-        <a href="report-category.html" class="primary-link">
-          <span class="material-symbols-outlined">add_circle</span>
-          <span>Submit a Report</span>
-        </a>
-        <a href="my-reports.html" class="secondary-link">View My Reports</a>
-      </section>
-
-      <section class="dashboard-layout">
+      <section class="dashboard-grid">
         <div class="main-column">
-          <div class="section-header">
-            <div>
-              <h3>Recent activity</h3>
-              <p>Your latest submitted reports and their current status.</p>
+          <article class="panel-card">
+            <div class="section-header">
+              <div><p class="section-kicker">Recent reports</p><h3>Latest submissions</h3></div>
+              <a href="#" class="text-link">View all reports</a>
             </div>
-            <a href="my-reports.html" class="inline-link">
-              <span>Open My Reports</span>
-              <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-          </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Report Title</th><th>Category</th><th>Date</th><th>Area</th><th>Status</th><th>Action</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Flooded drainage near Mabini Street</td><td><span class="tag">Infrastructure</span></td><td>Apr 4, 2026</td><td>Purok 3</td><td><span class="status-badge pending"><span class="status-dot"></span>Pending</span></td><td><a href="#" class="table-link">View Details</a></td></tr>
+                  <tr><td>Noise complaint during late hours</td><td><span class="tag">Complaint</span></td><td>Apr 3, 2026</td><td>Sampaguita Zone</td><td><span class="status-badge progress"><span class="status-dot"></span>In Progress</span></td><td><a href="#" class="table-link">View Details</a></td></tr>
+                  <tr><td>Broken lamp post near covered court</td><td><span class="tag">Infrastructure</span></td><td>Apr 3, 2026</td><td>Rizal Extension</td><td><span class="status-badge pending"><span class="status-dot"></span>Pending</span></td><td><a href="#" class="table-link">View Details</a></td></tr>
+                  <tr><td>Lost ID wallet returned to barangay hall</td><td><span class="tag">Lost and Found</span></td><td>Apr 2, 2026</td><td>Barangay Hall</td><td><span class="status-badge resolved"><span class="status-dot"></span>Resolved</span></td><td><a href="#" class="table-link">View Details</a></td></tr>
+                  <tr><td>Illegal dumping reported near creek</td><td><span class="tag">Sanitation</span></td><td>Apr 1, 2026</td><td>Purok 1</td><td><span class="status-badge rejected"><span class="status-dot"></span>Rejected</span></td><td><a href="#" class="table-link">View Details</a></td></tr>
+                  <tr><td>Damaged road sign at school corner</td><td><span class="tag">Safety</span></td><td>Mar 31, 2026</td><td>School Zone</td><td><span class="status-badge progress"><span class="status-dot"></span>In Progress</span></td><td><a href="#" class="table-link">View Details</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
 
-          <div class="activity-card">
-            <article class="activity-item">
-              <div class="activity-meta">
-                <span class="activity-tag">Infrastructure</span>
-                <span class="activity-date">March 13, 2026</span>
-              </div>
-              <h4>Broken streetlight on Main Avenue</h4>
-              <p>The concern has been received and is waiting for field review.</p>
-              <span class="status-badge pending">
-                <span class="status-dot"></span>
-                Pending
-              </span>
-            </article>
-
-            <article class="activity-item">
-              <div class="activity-meta">
-                <span class="activity-tag">Complaint</span>
-                <span class="activity-date">March 11, 2026</span>
-              </div>
-              <h4>Noise complaint near Sampaguita Street</h4>
-              <p>Barangay staff marked this report as currently under follow-up.</p>
-              <span class="status-badge progress">
-                <span class="status-dot"></span>
-                In Progress
-              </span>
-            </article>
-
-            <article class="activity-item">
-              <div class="activity-meta">
-                <span class="activity-tag">Infrastructure</span>
-                <span class="activity-date">March 05, 2026</span>
-              </div>
-              <h4>Pothole repair request on 5th Street</h4>
-              <p>The issue has been scheduled for maintenance coordination.</p>
-              <span class="status-badge scheduled">
-                <span class="status-dot"></span>
-                Scheduled
-              </span>
-            </article>
-          </div>
+          <article class="panel-card chart-card">
+            <div class="section-header">
+              <div><p class="section-kicker">Quick insight</p><h3>Reports by category</h3></div>
+              <span class="muted-text">This week</span>
+            </div>
+            <div class="chart-list" aria-label="Reports by category">
+              <div class="chart-row"><div class="chart-meta"><span>Infrastructure</span><strong>42</strong></div><div class="chart-bar"><span style="width: 84%;"></span></div></div>
+              <div class="chart-row"><div class="chart-meta"><span>Complaint</span><strong>28</strong></div><div class="chart-bar"><span style="width: 56%;"></span></div></div>
+              <div class="chart-row"><div class="chart-meta"><span>Incident</span><strong>19</strong></div><div class="chart-bar"><span style="width: 38%;"></span></div></div>
+              <div class="chart-row"><div class="chart-meta"><span>Sanitation</span><strong>14</strong></div><div class="chart-bar"><span style="width: 28%;"></span></div></div>
+            </div>
+          </article>
         </div>
 
         <aside class="side-column">
-          <section class="info-card">
-            <h3>Community notes</h3>
-            <div class="note-item">
-              <span class="material-symbols-outlined note-icon">campaign</span>
-              <div>
-                <p class="note-title">Scheduled drainage maintenance</p>
-                <p class="note-text">Expected on March 25 along Rizal Street.</p>
-              </div>
+          <article class="panel-card">
+            <div class="section-header"><div><p class="section-kicker">Urgent queue</p><h3>Priority cases</h3></div></div>
+            <div class="priority-list">
+              <div class="priority-item"><div><p class="priority-title">Repeated flooding complaint</p><p class="priority-meta">Purok 3 • 2 repeated reports</p></div><span class="priority-pill high">High</span></div>
+              <div class="priority-item"><div><p class="priority-title">Streetlight outage near school</p><p class="priority-meta">School Zone • unresolved for 3 days</p></div><span class="priority-pill medium">Medium</span></div>
+              <div class="priority-item"><div><p class="priority-title">Blocked drainage beside market</p><p class="priority-meta">Market Road • health risk flagged</p></div><span class="priority-pill high">High</span></div>
             </div>
-            <div class="note-item">
-              <span class="material-symbols-outlined note-icon">place</span>
-              <div>
-                <p class="note-title">Barangay hall</p>
-                <p class="note-text">123 Civic Center St., Metro Manila</p>
-              </div>
-            </div>
-          </section>
+          </article>
 
-          <section class="impact-card">
-            <p class="impact-label">Resident update</p>
-            <h3>Your reports help the barangay prioritize common neighborhood issues.</h3>
-            <p class="impact-text">
-              Keep using the reporting flow to document concerns clearly and
-              help speed up local review.
-            </p>
-          </section>
+          <article class="panel-card announcement-card">
+            <p class="section-kicker">Community announcement</p>
+            <h3>Drainage cleanup operations will begin on April 6.</h3>
+            <p class="announcement-text">Residents in Mabini Street, Purok 2, and Purok 3 are advised to keep pathways clear during the scheduled maintenance activity.</p>
+            <a href="#" class="secondary-link full-width">Edit Announcement</a>
+          </article>
+
+          <article class="panel-card">
+            <div class="section-header"><div><p class="section-kicker">Quick actions</p><h3>Common staff tasks</h3></div></div>
+            <div class="action-list">
+              <a href="#" class="action-item"><span class="material-symbols-outlined">rule</span><span>Review New Reports</span></a>
+              <a href="#" class="action-item"><span class="material-symbols-outlined">campaign</span><span>Post Announcement</span></a>
+              <a href="#" class="action-item"><span class="material-symbols-outlined">description</span><span>Generate Report Summary</span></a>
+            </div>
+          </article>
         </aside>
       </section>
     </div>
   </main>
 
-  <nav class="mobile-nav" aria-label="Resident mobile navigation">
-    <a href="dashboard.html" class="mobile-nav-link active">
-      <span class="material-symbols-outlined">dashboard</span>
-      <span>Dashboard</span>
-    </a>
-
-    <a href="report-category.html" class="mobile-nav-link">
-      <span class="material-symbols-outlined">add_circle</span>
-      <span>Submit</span>
-    </a>
-
-    <a href="my-reports.html" class="mobile-nav-link">
-      <span class="material-symbols-outlined">history</span>
-      <span>Reports</span>
-    </a>
+  <nav class="mobile-nav" aria-label="Staff mobile navigation">
+    <a href="dashboard.html" class="mobile-nav-link active"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+    <a href="#" class="mobile-nav-link"><span class="material-symbols-outlined">assignment</span><span>Reports</span></a>
+    <a href="#" class="mobile-nav-link"><span class="material-symbols-outlined">campaign</span><span>Alerts</span></a>
+    <a href="resident-dashboard.html" class="mobile-nav-link"><span class="material-symbols-outlined">person</span><span>Resident</span></a>
   </nav>
 </body>
 </html>

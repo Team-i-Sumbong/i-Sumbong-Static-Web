@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Settings | i-Sumbong</title>
+  <link rel="stylesheet" href="../css/common.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="layout">
+    <header class="topbar">
+      <div><p class="brand-title">i-Sumbong</p><p class="brand-subtitle">Admin settings</p></div>
+      <div class="topbar-user">Maria Lopez • Barangay Staff</div>
+    </header>
+    <aside class="sidebar">
+      <nav class="nav-list">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="reports.html" class="nav-link">Reports</a>
+        <a href="announcements.html" class="nav-link">Announcements</a>
+        <a href="settings.html" class="nav-link active">Settings</a>
+      </nav>
+      <div class="nav-footer nav-list">
+        <a href="../../resident/html/dashboard.html" class="nav-link">Open Resident View</a>
+        <a href="../../shared/html/login.html" class="nav-link">Logout</a>
+      </div>
+    </aside>
+    <main class="content">
+      <section class="page-header">
+        <p class="page-kicker">Settings</p>
+        <h1>Simple settings page</h1>
+        <p>Only basic fields are included so this screen stays easy to translate into Java.</p>
+      </section>
+      <section class="panel">
+        <div class="panel-header">
+          <div><p class="section-label">Account</p><h2>Staff information</h2></div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="admin-name">Full Name</label>
+            <input id="admin-name" type="text" value="Maria Lopez" />
+          </div>
+          <div class="field">
+            <label for="admin-role">Role</label>
+            <input id="admin-role" type="text" value="Barangay Secretary" />
+          </div>
+          <div class="field">
+            <label for="admin-email">Email</label>
+            <input id="admin-email" type="email" value="maria.lopez@isumbong.local" />
+          </div>
+        </div>
+        <div class="button-row">
+          <a href="#" class="button">Save Changes</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

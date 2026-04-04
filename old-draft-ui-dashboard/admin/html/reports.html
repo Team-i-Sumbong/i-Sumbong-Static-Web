@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Reports | i-Sumbong</title>
+  <link rel="stylesheet" href="../css/common.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="layout">
+    <header class="topbar">
+      <div><p class="brand-title">i-Sumbong</p><p class="brand-subtitle">Admin reports</p></div>
+      <div class="topbar-user">Maria Lopez • Barangay Staff</div>
+    </header>
+    <aside class="sidebar">
+      <nav class="nav-list">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="reports.html" class="nav-link active">Reports</a>
+        <a href="announcements.html" class="nav-link">Announcements</a>
+        <a href="settings.html" class="nav-link">Settings</a>
+      </nav>
+      <div class="nav-footer nav-list">
+        <a href="../../resident/html/dashboard.html" class="nav-link">Open Resident View</a>
+        <a href="../../shared/html/login.html" class="nav-link">Logout</a>
+      </div>
+    </aside>
+    <main class="content">
+      <section class="page-header">
+        <p class="page-kicker">Reports</p>
+        <h1>Report management</h1>
+        <p>A simple table-based page for reviewing report titles, locations, dates, and statuses.</p>
+      </section>
+      <section class="table-panel">
+        <div class="panel-header">
+          <div><p class="section-label">All Reports</p><h2>Current report list</h2></div>
+          <a href="dashboard.html" class="button-secondary">Back to Dashboard</a>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Area</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Flooded drainage near Mabini Street</td><td>Infrastructure</td><td>Apr 4, 2026</td><td>Purok 3</td><td><span class="status pending">Pending</span></td></tr>
+            <tr><td>Noise complaint during late hours</td><td>Complaint</td><td>Apr 3, 2026</td><td>Sampaguita Zone</td><td><span class="status progress">In Progress</span></td></tr>
+            <tr><td>Broken lamp post near covered court</td><td>Infrastructure</td><td>Apr 3, 2026</td><td>Rizal Extension</td><td><span class="status resolved">Resolved</span></td></tr>
+            <tr><td>Illegal dumping near creek</td><td>Sanitation</td><td>Apr 1, 2026</td><td>Purok 1</td><td><span class="status pending">Pending</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

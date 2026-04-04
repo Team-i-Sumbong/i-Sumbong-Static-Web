@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | i-Sumbong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #f4f6fb;
+      font-family: "Montserrat", sans-serif;
+      color: #1c2740;
+    }
+    .card {
+      width: min(420px, 92%);
+      padding: 28px;
+      background: #ffffff;
+      border: 1px solid #d8e0ef;
+      border-radius: 14px;
+      box-shadow: 0 10px 28px rgba(19, 59, 134, 0.08);
+    }
+    h1 {
+      margin: 8px 0 12px;
+      color: #133b86;
+    }
+    p {
+      color: #61708b;
+      line-height: 1.6;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .button {
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .primary {
+      background: #133b86;
+      color: #ffffff;
+    }
+    .secondary {
+      background: #eef2fa;
+      color: #133b86;
+    }
+    .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #61708b;
+    }
+  </style>
+</head>
+<body>
+  <section class="card">
+    <p class="label">Shared Login Page</p>
+    <h1>i-Sumbong</h1>
+    <p>This simple login landing page is used as the logout destination for both admin and resident screens.</p>
+    <div class="actions">
+      <a href="../../admin/html/dashboard.html" class="button primary">Open Admin Demo</a>
+      <a href="../../resident/html/dashboard.html" class="button secondary">Open Resident Demo</a>
+    </div>
+  </section>
+</body>
+</html>
