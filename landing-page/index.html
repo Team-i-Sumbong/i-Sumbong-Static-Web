@@ -22,6 +22,10 @@
         <span class="brand-subtitle">Barangay issue reporting platform</span>
       </a>
 
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('menu-open')">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
       <nav class="topbar-nav nav-center" aria-label="Promotional sections">
         <a class="nav-link nav-home" href="#home">Home</a>
         <a class="nav-link nav-features" href="#features">Features</a>
@@ -32,7 +36,7 @@
 
       <nav class="topbar-nav nav-right" aria-label="Primary actions">
         <div class="nav-auth-group">
-          <a class="nav-link nav-auth" href="../login-and-create-account/log-in.html">Login</a>
+          <a class="nav-link nav-auth" href="../app/auth/log-in.html">Login</a>
           <a class="nav-helper-link" href="#get-started">New user? Get started</a>
         </div>
       </nav>
@@ -299,11 +303,11 @@
             and more transparent community issue handling.
           </p>
           <div class="cta-actions">
-            <a class="btn btn-primary" href="../login-and-create-account/create-account.html">Create an Account</a>
+            <a class="btn btn-primary" href="../app/auth/create-account.html">Create an Account</a>
           </div>
           <p class="cta-secondary-link">
             Already have an account?
-            <a href="../login-and-create-account/log-in.html">Login instead</a>
+            <a href="../app/auth/log-in.html">Login instead</a>
           </p>
         </div>
       </div>

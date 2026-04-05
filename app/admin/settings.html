@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resident Settings | i-Sumbong</title>
+  <title>Admin Settings | i-Sumbong</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <script src="../theme.js"></script>
+  <script src="../shared/theme.js"></script>
 </head>
 
 <body>
@@ -20,11 +20,11 @@
             class="material-symbols-outlined">menu</span></button>
         <div>
           <p class="brand-title">i-Sumbong</p>
-          <p class="brand-subtitle">Resident settings</p>
+          <p class="brand-subtitle">Admin settings</p>
         </div>
       </div>
       <a href="settings.html" class="topbar-user" style="text-decoration: none;"><span class="material-symbols-outlined"
-          aria-hidden="true">account_circle</span><span>Juan Dela Cruz</span><span>•</span><span>Resident</span></a>
+          aria-hidden="true">badge</span><span>Maria Lopez</span><span>•</span><span>Barangay Staff</span></a>
     </header>
     <aside class="sidebar">
       <nav class="nav-list">
@@ -34,41 +34,43 @@
             aria-hidden="true">article</span><span>Reports</span></a>
         <a href="announcements.html" class="nav-link"><span class="material-symbols-outlined nav-icon"
             aria-hidden="true">campaign</span><span>Announcements</span></a>
+        <a href="manage-users.html" class="nav-link"><span class="material-symbols-outlined nav-icon"
+            aria-hidden="true">manage_accounts</span><span>Manage Users</span></a>
         <a href="settings.html" class="nav-link active"><span class="material-symbols-outlined nav-icon"
             aria-hidden="true">settings</span><span>Settings</span></a>
       </nav>
       <div class="nav-footer nav-list">
-        <a href="../admin-dashboard/dashboard.html" class="nav-link"><span class="material-symbols-outlined nav-icon"
-            aria-hidden="true">admin_panel_settings</span><span>Open Staff View</span></a>
-        <a href="../login-and-create-account/log-in.html" class="nav-link"><span
+        <a href="../resident/dashboard.html" class="nav-link"><span class="material-symbols-outlined nav-icon"
+            aria-hidden="true">person</span><span>Open Resident View</span></a>
+        <a href="../auth/log-in.html" class="nav-link"><span
             class="material-symbols-outlined nav-icon" aria-hidden="true">logout</span><span>Logout</span></a>
       </div>
     </aside>
     <main class="content">
       <section class="page-header">
         <p class="page-kicker">Settings</p>
-        <h1>Basic account settings</h1>
-        <p>This page keeps only simple input fields so it is easier to rebuild later.</p>
+        <h1>Simple settings page</h1>
+        <p>Only basic fields are included so this screen stays easy to translate into Java.</p>
       </section>
       <section class="panel">
         <div class="panel-header">
           <div>
             <p class="section-label">Account</p>
-            <h2>Resident information</h2>
+            <h2>Staff information</h2>
           </div>
         </div>
         <div class="form-grid">
           <div class="field">
-            <label for="resident-name">Full Name</label>
-            <input id="resident-name" type="text" value="Juan Dela Cruz" />
+            <label for="admin-name">Full Name</label>
+            <input id="admin-name" type="text" value="Maria Lopez" />
           </div>
           <div class="field">
-            <label for="resident-email">Email</label>
-            <input id="resident-email" type="email" value="juan.delacruz@isumbong.local" />
+            <label for="admin-role">Role</label>
+            <input id="admin-role" type="text" value="Barangay Secretary" />
           </div>
           <div class="field">
-            <label for="resident-contact">Contact Number</label>
-            <input id="resident-contact" type="text" value="+63 912 345 6789" />
+            <label for="admin-email">Email</label>
+            <input id="admin-email" type="email" value="maria.lopez@isumbong.local" />
           </div>
         </div>
         <div class="field"
