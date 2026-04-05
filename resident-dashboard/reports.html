@@ -16,7 +16,7 @@
         <button class="menu-btn" aria-label="Toggle Menu" onclick="document.querySelector('.sidebar').classList.toggle('mobile-open')"><span class="material-symbols-outlined">menu</span></button>
         <div><p class="brand-title">i-Sumbong</p><p class="brand-subtitle">Resident reports</p></div>
       </div>
-      <div class="topbar-user"><span class="material-symbols-outlined" aria-hidden="true">account_circle</span><span>Juan Dela Cruz</span><span>•</span><span>Resident</span></div>
+      <a href="settings.html" class="topbar-user" style="text-decoration: none;"><span class="material-symbols-outlined" aria-hidden="true">account_circle</span><span>Juan Dela Cruz</span><span>•</span><span>Resident</span></a>
     </header>
     <aside class="sidebar">
       <nav class="nav-list">
@@ -41,9 +41,9 @@
         <table>
           <thead><tr><th>Title</th><th>Category</th><th>Date</th><th>Status</th></tr></thead>
           <tbody>
-            <tr><td>Broken streetlight near Mabini Street</td><td>Infrastructure</td><td>Apr 4, 2026</td><td><span class="status pending">Pending</span></td></tr>
-            <tr><td>Noise complaint in Sampaguita Zone</td><td>Complaint</td><td>Apr 2, 2026</td><td><span class="status progress">In Progress</span></td></tr>
-            <tr><td>Missing ID holder at barangay hall</td><td>Lost and Found</td><td>Mar 30, 2026</td><td><span class="status resolved">Resolved</span></td></tr>
+            <tr><td><a href="report-view-window.html" onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Broken streetlight near Mabini Street</span></a></td><td>Infrastructure</td><td>Apr 4, 2026</td><td><span class="status pending">Pending</span></td></tr>
+            <tr><td><a href="report-view-window.html" onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Noise complaint in Sampaguita Zone</span></a></td><td>Complaint</td><td>Apr 2, 2026</td><td><span class="status progress">In Progress</span></td></tr>
+            <tr><td><a href="report-view-window.html" onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Missing ID holder at barangay hall</span></a></td><td>Lost and Found</td><td>Mar 30, 2026</td><td><span class="status resolved">Resolved</span></td></tr>
           </tbody>
         </table>
       </section>
