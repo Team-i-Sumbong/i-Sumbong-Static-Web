@@ -70,3 +70,14 @@ th { border-top: none; color: var(--muted); font-size: 11px; text-transform: upp
 .window-section h2 { margin: 0 0 10px; font-size: 18px; color: var(--primary); }
 @media (max-width: 900px) { .card-grid, .content-grid { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .sidebar { position: static; width: auto; border-right: none; border-bottom: 1px solid var(--border); } .content { margin-left: 0; padding: 24px 16px 32px; } .topbar { position: static; } .window-shell { padding: 12px; } .window-content { padding: 18px; } }
+/* Dark Theme Variables */
+:root.dark-theme {
+  --bg: #0f1524; --panel: #162032; --panel-soft: #1d2b45; --text: #e2e8f0; --muted: #94a3b8;
+  --primary: #60a5fa; --accent: #fbbf24; --border: #2a3a5a;
+  --pending-bg: #4a3400; --pending-text: #fde68a;
+  --progress-bg: #1e3a8a; --progress-text: #bfdbfe;
+  --resolved-bg: #064e3b; --resolved-text: #a7f3d0;
+  --shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+:root.dark-theme .window-shell { background: var(--bg); }
+:root.dark-theme input, :root.dark-theme textarea, :root.dark-theme select { background: #0f1524; color: var(--text); border-color: var(--border); }
