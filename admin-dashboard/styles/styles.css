@@ -8,7 +8,7 @@
 body { margin: 0; background: var(--bg); color: var(--text); font-family: "Montserrat", sans-serif; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
-.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24; }
+.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
 .layout { min-height: 100vh; }
 .topbar { position: fixed; top: 0; left: 0; right: 0; height: var(--topbar-height); padding: 0 24px; background: var(--panel); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; z-index: 10; }
 .brand-title { margin: 0; font-size: 28px; font-weight: 800; color: var(--primary); }
@@ -69,7 +69,15 @@ th { border-top: none; color: var(--muted); font-size: 11px; text-transform: upp
 .window-section + .window-section { margin-top: 18px; }
 .window-section h2 { margin: 0 0 10px; font-size: 18px; color: var(--primary); }
 @media (max-width: 900px) { .card-grid, .content-grid { grid-template-columns: 1fr; } }
-@media (max-width: 760px) { .sidebar { position: static; width: auto; border-right: none; border-bottom: 1px solid var(--border); } .content { margin-left: 0; padding: 24px 16px 32px; } .topbar { position: static; } .window-shell { padding: 12px; } .window-content { padding: 18px; } }
+@media (max-width: 760px) {
+  .menu-btn { display: inline-flex; align-items: center; justify-content: center; background: none; border: none; color: var(--primary); padding: 6px; cursor: pointer; border-radius: 8px; margin-right: 4px; }
+  .menu-btn:hover { background: var(--panel-soft); }
+  .topbar-user span:not(.material-symbols-outlined) { display: none; }
+  .sidebar { position: fixed; top: var(--topbar-height); left: 0; width: 250px; bottom: 0; transform: translateX(-100%); transition: transform 0.3s ease; border-right: 1px solid var(--border); z-index: 100; box-shadow: 4px 0 24px rgba(0,0,0,0.05); }
+  .sidebar.mobile-open { transform: translateX(0); }
+  .content { margin-left: 0; padding: calc(var(--topbar-height) + 24px) 16px 32px; }
+  .window-shell { padding: 12px; } .window-content { padding: 18px; }
+}
 /* Dark Theme Variables */
 :root.dark-theme {
   --bg: #0f1524; --panel: #162032; --panel-soft: #1d2b45; --text: #e2e8f0; --muted: #94a3b8;

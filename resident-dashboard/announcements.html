@@ -11,7 +11,10 @@
 <body>
   <div class="layout">
     <header class="topbar">
-      <div><p class="brand-title">i-Sumbong</p><p class="brand-subtitle">Resident announcements</p></div>
+      <div style="display: flex; align-items: center;">
+        <button class="menu-btn" aria-label="Toggle Menu" onclick="document.querySelector('.sidebar').classList.toggle('mobile-open')"><span class="material-symbols-outlined">menu</span></button>
+        <div><p class="brand-title">i-Sumbong</p><p class="brand-subtitle">Resident announcements</p></div>
+      </div>
       <div class="topbar-user">Juan Dela Cruz â€¢ Resident</div>
     </header>
     <aside class="sidebar">

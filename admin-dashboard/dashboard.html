@@ -12,7 +12,10 @@
 <body>
   <div class="layout">
     <header class="topbar">
-      <div><p class="brand-title">i-Sumbong</p><p class="brand-subtitle">Admin dashboard</p></div>
+      <div style="display: flex; align-items: center;">
+        <button class="menu-btn" aria-label="Toggle Menu" onclick="document.querySelector('.sidebar').classList.toggle('mobile-open')"><span class="material-symbols-outlined">menu</span></button>
+        <div><p class="brand-title">i-Sumbong</p><p class="brand-subtitle">Admin dashboard</p></div>
+      </div>
       <div class="topbar-user"><span class="material-symbols-outlined" aria-hidden="true">badge</span><span>Maria Lopez</span><span>•</span><span>Barangay Staff</span></div>
     </header>
     <aside class="sidebar">
@@ -44,9 +47,9 @@
           <table>
             <thead><tr><th>Title</th><th>Area</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td><a href="report-view-window.html" target="_blank" rel="noopener noreferrer" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Flooded drainage near Mabini Street</span></a></td><td>Purok 3</td><td><span class="status pending">Pending</span></td></tr>
-              <tr><td><a href="report-view-window.html" target="_blank" rel="noopener noreferrer" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Noise complaint during late hours</span></a></td><td>Sampaguita Zone</td><td><span class="status progress">In Progress</span></td></tr>
-              <tr><td><a href="report-view-window.html" target="_blank" rel="noopener noreferrer" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Broken lamp post near covered court</span></a></td><td>Rizal Extension</td><td><span class="status resolved">Resolved</span></td></tr>
+              <tr><td><a href="report-view-window.html" onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Flooded drainage near Mabini Street</span></a></td><td>Purok 3</td><td><span class="status pending">Pending</span></td></tr>
+              <tr><td><a href="report-view-window.html" onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Noise complaint during late hours</span></a></td><td>Sampaguita Zone</td><td><span class="status progress">In Progress</span></td></tr>
+              <tr><td><a href="report-view-window.html" onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;" class="table-link"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span>Broken lamp post near covered court</span></a></td><td>Rizal Extension</td><td><span class="status resolved">Resolved</span></td></tr>
             </tbody>
           </table>
         </article>
