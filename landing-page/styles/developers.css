@@ -50,6 +50,8 @@ button,
 input,
 textarea {
   font: inherit;
+  resize: vertical;
+  max-height: 250px;
 }
 
 .container {
