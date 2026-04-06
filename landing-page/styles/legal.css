@@ -307,6 +307,25 @@ a {
   margin-left: 14px;
 }
 
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(16, 46, 115, 0.08);
+}
+
+.mobile-menu-toggle .material-symbols-outlined {
+  font-size: 28px;
+}
+
 @media (max-width: 720px) {
 
   .topbar-content,
