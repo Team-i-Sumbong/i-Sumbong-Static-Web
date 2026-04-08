@@ -232,8 +232,7 @@ section {
 .hero {
   position: relative;
   background:
-    radial-gradient(circle at top left, rgba(255, 212, 6, 0.22), transparent 28%),
-    linear-gradient(135deg, #092985 0%, #1d3fa3 28%, #b90905 76%, #ffd406 100%);
+    linear-gradient(180deg, #1a419a 0%, #244eae 52%, #3262c2 100%);
   color: #ffffff;
   min-height: 92vh;
   display: flex;
@@ -247,7 +246,7 @@ section {
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: rgba(255, 212, 6, 0.2);
+  background: rgba(255, 255, 255, 0.09);
   filter: blur(12px);
 }
 
@@ -580,7 +579,7 @@ section {
 }
 
 .cta-panel {
-  background: linear-gradient(135deg, #092985 0%, #1d3fa3 28%, #b90905 76%, #ffd406 100%);
+  background: linear-gradient(180deg, #1a419a 0%, #244eae 52%, #3262c2 100%);
   color: #ffffff;
   border-radius: var(--radius-lg);
   padding: 38px;

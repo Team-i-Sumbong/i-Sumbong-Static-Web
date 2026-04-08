@@ -1,13 +1,13 @@
 :root {
   --bg: #f4f6fb;
   --panel: #fff;
-  --panel-soft: #eef2fa;
+  --panel-soft: #ffffff;
   --text: #1c2740;
   --muted: #61708b;
   --primary: #133b86;
   --accent: #f0b323;
   --border: #d8e0ef;
-  --pending-bg: #fff3cd;
+  --pending-bg: #ffffff;
   --pending-text: #8a6700;
   --progress-bg: #dce8ff;
   --progress-text: #1f56bf;
@@ -217,8 +217,8 @@ textarea {
   padding: 28px 30px;
   border-radius: 26px;
   overflow: hidden;
-  background: linear-gradient(135deg, #092985 0%, #1d3fa3 28%, #b90905 76%, #ffd406 100%);
-  box-shadow: 0 20px 40px rgba(9, 41, 133, 0.24);
+  background: linear-gradient(180deg, #1a419a 0%, #244eae 52%, #3262c2 100%);
+  box-shadow: 0 20px 40px rgba(18, 52, 141, 0.28);
   color: #fff;
 }
 
@@ -226,7 +226,9 @@ textarea {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.14), transparent 55%);
+  background:
+    radial-gradient(circle at 84% 22%, rgba(255, 255, 255, 0.12) 0, rgba(255, 255, 255, 0.12) 18%, transparent 18.5%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent 58%);
   pointer-events: none;
 }
 
@@ -275,7 +277,7 @@ textarea {
 .welcome-orb {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 212, 6, 0.16);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .orb-large {
@@ -290,7 +292,7 @@ textarea {
   height: 136px;
   right: 24px;
   top: -66px;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .card-grid {

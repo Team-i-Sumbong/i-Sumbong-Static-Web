@@ -12,8 +12,8 @@
   --text-muted: #576074;
   --primary: #102e73;
   --primary-dark: #0a1d48;
-  --accent: #f2b705;
-  --accent-soft: #fff6d8;
+  --accent: #ffd406;
+  --accent-soft: #ffffff;
   --outline: #d8dfec;
   --shadow-sm: 0 10px 30px rgba(16, 46, 115, 0.08);
   --shadow-md: 0 18px 50px rgba(10, 29, 72, 0.16);
@@ -271,10 +271,20 @@ textarea {
 
 .signup-intro {
   padding: 40px;
-  background: linear-gradient(145deg, rgba(16, 46, 115, 0.97) 0%, rgba(24, 72, 178, 0.94) 100%);
+  background: linear-gradient(180deg, #1a419a 0%, #244eae 52%, #3262c2 100%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
+}
+
+.signup-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 50%),
+    radial-gradient(circle at 84% 86%, rgba(255, 255, 255, 0.09) 0, rgba(255, 255, 255, 0.09) 20%, transparent 20.5%);
+  pointer-events: none;
 }
 
 .signup-intro::after {
@@ -329,8 +339,8 @@ textarea {
   align-items: flex-start;
   padding: 18px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.09);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .intro-point .material-symbols-outlined {
@@ -340,7 +350,7 @@ textarea {
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: rgba(242, 183, 5, 0.14);
+  background: rgba(255, 212, 6, 0.16);
   color: #ffd76a;
   font-size: 26px;
   flex-shrink: 0;
@@ -362,8 +372,8 @@ textarea {
   z-index: 1;
   padding: 22px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .support-card h3 {
