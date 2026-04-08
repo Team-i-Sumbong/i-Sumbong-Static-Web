@@ -207,6 +207,92 @@ textarea {
   line-height: 1.6;
 }
 
+.welcome-banner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 28px 30px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #092985 0%, #1d3fa3 28%, #b90905 76%, #ffd406 100%);
+  box-shadow: 0 20px 40px rgba(9, 41, 133, 0.24);
+  color: #fff;
+}
+
+.welcome-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.14), transparent 55%);
+  pointer-events: none;
+}
+
+.welcome-copy,
+.welcome-orbs {
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-copy {
+  max-width: 560px;
+}
+
+.welcome-banner h2 {
+  margin: 0;
+  
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.welcome-banner p {
+  margin: 12px 0 0;
+  max-width: 500px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.welcome-banner .button-row {
+  margin-top: 24px;
+}
+
+.welcome-banner .button {
+  background: #ffd406;
+  color: #092985;
+  box-shadow: 0 10px 24px rgba(9, 41, 133, 0.28);
+}
+
+.welcome-banner .button:hover {
+  background: #ffe15b;
+}
+
+.welcome-orbs {
+  min-width: 190px;
+}
+
+.welcome-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 212, 6, 0.16);
+}
+
+.orb-large {
+  width: 240px;
+  height: 240px;
+  right: -94px;
+  top: -16px;
+}
+
+.orb-small {
+  width: 136px;
+  height: 136px;
+  right: 24px;
+  top: -66px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -497,6 +583,20 @@ th {
 
 @media (max-width: 900px) {
 
+  .welcome-banner {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .welcome-copy {
+    max-width: none;
+  }
+
+  .welcome-orbs {
+    min-width: 0;
+    min-height: 110px;
+  }
+
   .card-grid,
   .content-grid {
     grid-template-columns: 1fr;
@@ -546,6 +646,15 @@ th {
 }
 
 @media (max-width: 760px) {
+  .welcome-banner h2 {
+    font-size: 28px;
+  }
+
+  .welcome-banner .button {
+    width: 100%;
+    justify-content: center;
+  }
+
   .topbar-user span:not(.material-symbols-outlined) {
     display: none;
   }
