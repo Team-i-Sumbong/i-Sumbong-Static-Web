@@ -79,9 +79,23 @@ textarea {
 .brand-block {
   text-decoration: none;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  gap: 12px;
   min-width: 220px;
+}
+
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1;
 }
 
 .brand-title {
@@ -89,6 +103,7 @@ textarea {
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--primary);
+  margin: 0;
 }
 
 .brand-subtitle {
@@ -97,6 +112,7 @@ textarea {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-muted);
+  margin-top: 4px;
 }
 
 .topbar-nav {
@@ -423,13 +439,20 @@ textarea {
   gap: 24px;
 }
 
+.footer-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .footer-grid h3,
 .footer-grid h4 {
-  margin-bottom: 12px;
+  margin: 0 0 4px;
 }
 
 .footer-grid p,
 .footer-grid a {
+  margin: 0;
   color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
 }
@@ -452,10 +475,19 @@ textarea {
   flex-wrap: wrap;
 }
 
+.footer-bottom div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
 .footer-bottom a {
   color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
-  margin-left: 14px;
 }
 
 .mobile-menu-toggle {
@@ -523,8 +555,4 @@ textarea {
     height: 100px;
   }
 
-  .footer-bottom a {
-    margin-left: 0;
-    margin-right: 14px;
-  }
 }
