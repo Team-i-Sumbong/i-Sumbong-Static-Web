@@ -699,6 +699,21 @@ th {
   background: var(--bg);
 }
 
+:root.dark-theme .sidebar {
+  background: #111a2d;
+  border-right-color: #23314f;
+}
+
+:root.dark-theme .nav-link.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.22);
+}
+
+:root.dark-theme .nav-footer {
+  border-top-color: #23314f;
+}
+
 :root.dark-theme input,
 :root.dark-theme textarea,
 :root.dark-theme select {
