@@ -25,22 +25,29 @@
         </div>
       </a>
 
-      <nav class="topbar-nav nav-center" aria-label="Promotional sections">
-        <a class="nav-link" href="../../landing-page/index.html#home">Home</a>
-        <a class="nav-link" href="../../landing-page/index.html#features">Features</a>
-        <a class="nav-link" href="../../landing-page/index.html#how-it-works">How it Works</a>
-        <a class="nav-link" href="../../landing-page/index.html#about">About</a>
-        <a class="nav-link" href="../../landing-page/developers.html">Developers</a>
-      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation"
+        onclick="document.body.classList.toggle('menu-open')">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
 
-      <nav class="topbar-nav nav-right" aria-label="Primary actions">
-        <div class="nav-auth-group">
-          <button type="submit" form="registration-form" class="nav-link active-link nav-auth">
-            Create Account
-          </button>
-          <a class="nav-helper-link" href="log-in.html">Already have an account? Login instead</a>
-        </div>
-      </nav>
+      <div class="mobile-nav-drawer">
+        <nav class="topbar-nav nav-center" aria-label="Promotional sections">
+          <a class="nav-link" href="../../landing-page/index.html#home">Home</a>
+          <a class="nav-link" href="../../landing-page/index.html#features">Features</a>
+          <a class="nav-link" href="../../landing-page/index.html#how-it-works">How it Works</a>
+          <a class="nav-link" href="../../landing-page/index.html#about">About</a>
+          <a class="nav-link" href="../../landing-page/developers.html">Developers</a>
+        </nav>
+
+        <nav class="topbar-nav nav-right" aria-label="Primary actions">
+          <div class="nav-auth-group">
+            <button type="submit" form="registration-form" class="nav-link active-link nav-auth">
+              Create Account
+            </button>
+            <a class="nav-helper-link" href="log-in.html">Already have an account? Login instead</a>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
 
