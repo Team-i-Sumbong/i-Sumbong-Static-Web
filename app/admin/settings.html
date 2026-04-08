@@ -52,66 +52,116 @@
     <main class="content">
       <section class="page-header">
         <p class="page-kicker">Settings</p>
-        <h1>Simple settings page</h1>
-        <p>Only basic fields are included so this screen stays easy to translate into Java.</p>
+        <h1>Account settings</h1>
+        <p>Review verification, manage preferences, and edit the same details collected during registration.</p>
+      </section>
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-label">Overview</p>
+            <h2>Staff account status</h2>
+          </div>
+        </div>
+        <div class="settings-overview">
+          <article class="simple-item">
+            <div class="simple-item-row">
+              <div>
+                <h3>Verification status</h3>
+                <p>Your staff account has already been reviewed and verified for dashboard access.</p>
+              </div>
+              <span class="status verified">Verified</span>
+            </div>
+          </article>
+          <div class="toggle-row">
+            <div class="toggle-copy">
+              <h3>Dark Theme</h3>
+              <p>Switch between the default light view and the dark dashboard theme.</p>
+            </div>
+            <label class="switch" for="theme-toggle">
+              <input type="checkbox" id="theme-toggle" onclick="toggleTheme()">
+              <span class="switch-track"><span class="switch-thumb"></span></span>
+            </label>
+          </div>
+        </div>
       </section>
       <section class="panel">
         <div class="panel-header">
           <div>
             <p class="section-label">Account</p>
-            <h2>Staff information</h2>
+            <h2>Edit staff information</h2>
           </div>
         </div>
-        <div class="form-grid">
+        <div class="form-grid account-grid">
           <div class="field">
-            <label for="admin-name">Full Name</label>
-            <input id="admin-name" type="text" value="Maria Lopez" />
+            <label for="admin-first-name">First Name</label>
+            <input id="admin-first-name" type="text" value="Maria" />
           </div>
           <div class="field">
-            <label for="admin-role">Role</label>
-            <input id="admin-role" type="text" value="Barangay Secretary" />
+            <label for="admin-last-name">Last Name</label>
+            <input id="admin-last-name" type="text" value="Lopez" />
           </div>
           <div class="field">
-            <label for="admin-email">Email</label>
+            <label for="admin-email">Email Address</label>
             <input id="admin-email" type="email" value="maria.lopez@isumbong.local" />
           </div>
+          <div class="field">
+            <label for="admin-contact">Mobile Number</label>
+            <input id="admin-contact" type="text" value="+63 917 456 7821" />
+          </div>
+          <div class="field">
+            <label for="admin-barangay">Barangay</label>
+            <select id="admin-barangay">
+              <option>Barangay Baybay</option>
+              <option>Barangay Poblacion</option>
+              <option>Barangay San Jose</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="admin-role">Account Type</label>
+            <select id="admin-role">
+              <option>Resident</option>
+              <option>Barangay Official</option>
+              <option selected>Barangay Staff</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="admin-address">Street Address or Landmark</label>
+            <input id="admin-address" type="text" value="Municipal compound, main office beside the barangay hall" />
+          </div>
+          <div class="field">
+            <label for="admin-password">Password</label>
+            <input id="admin-password" type="password" value="AdminSecure123!" />
+            <small>Use at least 8 characters if you want to change your password.</small>
+          </div>
+          <div class="field">
+            <label for="admin-confirm-password">Confirm Password</label>
+            <input id="admin-confirm-password" type="password" value="AdminSecure123!" />
+          </div>
         </div>
-        <div class="field"
-          style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel-soft); margin-top: 16px;">
-          <label style="margin: 0;">Dark Theme</label>
-          <label style="position: relative; display: inline-block; width: 40px; height: 24px;">
-            <input type="checkbox" id="theme-toggle" onclick="toggleTheme()" style="opacity: 0; width: 0; height: 0;">
-            <span
-              style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; border-radius: 24px; transition: .4s; border: none; padding: 0;">
-              <span class="slider-round"
-                style="position: absolute; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%;"></span>
-            </span>
+        <div class="settings-checkboxes">
+          <label class="settings-check" for="admin-terms">
+            <input type="checkbox" id="admin-terms" checked>
+            <span>I agree to the Terms and Privacy Policy for my i-Sumbong account.</span>
           </label>
-          <style>
-            input:checked+span {
-              background-color: var(--primary);
-            }
-
-            input:checked+span .slider-round {
-              transform: translateX(16px);
-            }
-          </style>
-          <script>
-            // Make sure the toggle matches current state
-            document.addEventListener('DOMContentLoaded', () => {
-              const toggle = document.getElementById('theme-toggle');
-              if (localStorage.getItem('theme') === 'dark') {
-                toggle.checked = true;
-              }
-            });
-          </script>
+          <label class="settings-check" for="admin-updates">
+            <input type="checkbox" id="admin-updates">
+            <span>I want to receive important account and report-related updates through the platform.</span>
+          </label>
         </div>
         <div class="button-row">
-          <a href="#" class="button">Save Changes</a>
+          <a href="#" class="button">Save Account Changes</a>
         </div>
       </section>
     </main>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('theme-toggle');
+      if (localStorage.getItem('theme') === 'dark') {
+        toggle.checked = true;
+      }
+    });
+  </script>
 </body>
 
 </html>
