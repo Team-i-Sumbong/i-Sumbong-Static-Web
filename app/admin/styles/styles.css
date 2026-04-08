@@ -763,11 +763,67 @@ th {
 :root.dark-theme .nav-link.active {
   background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
   color: #fff;
-  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.22);
 }
 
 :root.dark-theme .nav-footer {
   border-top-color: #23314f;
+}
+
+:root.dark-theme .card-blue {
+  background: #162848;
+  border-color: #28406f;
+}
+
+:root.dark-theme .card-blue .card-label,
+:root.dark-theme .card-blue .card-note {
+  color: #91a8d8;
+}
+
+:root.dark-theme .card-blue .card-value,
+:root.dark-theme .card-blue .metric-icon {
+  color: #7eb4ff;
+}
+
+:root.dark-theme .card-blue .metric-icon {
+  background: rgba(126, 180, 255, 0.12);
+}
+
+:root.dark-theme .card-red {
+  background: #35191f;
+  border-color: #5f2930;
+}
+
+:root.dark-theme .card-red .card-label,
+:root.dark-theme .card-red .card-note {
+  color: #e2a6ad;
+}
+
+:root.dark-theme .card-red .card-value,
+:root.dark-theme .card-red .metric-icon {
+  color: #ff8c8a;
+}
+
+:root.dark-theme .card-red .metric-icon {
+  background: rgba(255, 140, 138, 0.12);
+}
+
+:root.dark-theme .card-green {
+  background: #173226;
+  border-color: #28543e;
+}
+
+:root.dark-theme .card-green .card-label,
+:root.dark-theme .card-green .card-note {
+  color: #99d4b1;
+}
+
+:root.dark-theme .card-green .card-value,
+:root.dark-theme .card-green .metric-icon {
+  color: #63d58f;
+}
+
+:root.dark-theme .card-green .metric-icon {
+  background: rgba(99, 213, 143, 0.12);
 }
 
 :root.dark-theme input,
