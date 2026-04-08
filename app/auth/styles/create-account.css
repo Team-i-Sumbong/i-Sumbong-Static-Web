@@ -461,10 +461,37 @@ textarea {
 }
 
 .checkbox-item input {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: top;
   width: 18px;
   height: 18px;
-  margin-top: 2px;
-  accent-color: var(--primary);
+  min-width: 18px;
+  min-height: 18px;
+  margin: 3px 0 0;
+  flex-shrink: 0;
+  border: 2px solid rgba(87, 96, 116, 0.65);
+  border-radius: 4px;
+  background: #ffffff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checkbox-item input:checked {
+  background: var(--primary);
+  border-color: var(--primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.2' d='M3 8.5l3 3L13 4.5'/%3E%3C/svg%3E");
+  box-shadow: none;
+}
+
+.checkbox-item input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(16, 46, 115, 0.12);
 }
 
 .checkbox-item a {
