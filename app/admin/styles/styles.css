@@ -4,13 +4,13 @@
   --panel-soft: #eef2fa;
   --text: #1c2740;
   --muted: #61708b;
-  --primary: #133b86;
+  --primary: #092985;
   --accent: #f0b323;
   --border: #d8e0ef;
   --pending-bg: #fff3cd;
   --pending-text: #8a6700;
   --progress-bg: #dce8ff;
-  --progress-text: #1f56bf;
+  --progress-text: #092985;
   --resolved-bg: #dff4e8;
   --resolved-text: #1c7a49;
   --unverified-bg: #ffe1dd;
@@ -331,7 +331,7 @@ textarea {
 
 .card-blue .card-label,
 .card-blue .card-note {
-  color: #4662a3;
+  color: #092985;
 }
 
 .card-blue .card-value,

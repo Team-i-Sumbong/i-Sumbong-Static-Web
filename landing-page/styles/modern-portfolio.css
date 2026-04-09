@@ -6,7 +6,7 @@
   --surface-panel: rgba(255, 255, 255, 0.9);
   --text-main: #172033;
   --text-muted: #576074;
-  --primary: #102e73;
+  --primary: #092985;
   --primary-dark: #0a1d48;
   --primary-soft: #dfe9ff;
   --accent: #f2b705;
@@ -411,7 +411,7 @@ h3.subsection-title {
 
 .timeline-date {
   font-size: 0.9rem;
-  color: #366ad2;
+  color: #092985;
   font-weight: 700;
   margin-bottom: 0.55rem;
 }
@@ -475,7 +475,7 @@ h3.subsection-title {
 
 .project-link:hover,
 .project-link:focus-visible {
-  color: #2b61ca;
+  color: #092985;
 }
 
 .contact-form {
