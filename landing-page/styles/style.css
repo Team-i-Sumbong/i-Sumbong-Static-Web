@@ -7,6 +7,7 @@
 :root {
   --surface: #f5f7fb;
   --surface-soft: #eef2f9;
+  --surface-story: #ffffff;
   --surface-card: #ffffff;
   --text: #172033;
   --text-muted: #576074;
@@ -406,9 +407,12 @@ section {
   background: var(--surface);
 }
 
-.features,
-.how-works {
+.features {
   background: var(--surface-soft);
+}
+
+.how-works {
+  background: var(--surface-story);
 }
 
 .cards,
@@ -516,7 +520,7 @@ section {
 
 .benefits-header {
   padding: 88px 0 36px;
-  background: linear-gradient(180deg, #eaf0fb 0%, var(--surface) 100%);
+  background: transparent;
   text-align: center;
 }
 
@@ -558,7 +562,7 @@ section {
 }
 
 .about {
-  background: linear-gradient(180deg, var(--surface) 0%, #eef3ff 100%);
+  background: var(--surface-story);
 }
 
 .about-heading {
@@ -576,6 +580,7 @@ section {
 
 .final-cta {
   padding: 24px 0 88px;
+  background: var(--surface-story);
 }
 
 .cta-panel {
