@@ -93,6 +93,10 @@ textarea {
   flex-shrink: 0;
 }
 
+.dark-logo {
+  display: none;
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -892,6 +896,14 @@ th {
 
 :root.dark-theme .window-shell {
   background: var(--bg);
+}
+
+:root.dark-theme .light-logo {
+  display: none;
+}
+
+:root.dark-theme .dark-logo {
+  display: block;
 }
 
 :root.dark-theme .sidebar {
