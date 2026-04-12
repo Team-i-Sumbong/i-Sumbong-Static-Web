@@ -59,7 +59,7 @@
         </div>
         <p>A static interface for verifying, deactivating, editing, and deleting users.</p>
       </section>
-      <section class="table-panel" style="overflow-x: auto;">
+      <section class="table-panel users-table-panel">
         <div class="panel-header">
           <div>
             <p class="section-label">All Users</p>
@@ -69,74 +69,54 @@
             </div>
           </div>
         </div>
-        <table style="min-width: 800px;">
+        <table class="users-table">
           <thead>
             <tr>
               <th>Name</th>
               <th>Role</th>
-              <th>Verification</th>
-              <th>Status</th>
-              <th>Actions</th>
+              <th class="column-center">Verification</th>
+              <th class="column-center">Status</th>
+              <th class="column-center">Edit</th>
+              <th class="column-center">Deactivate / Reactivate</th>
+              <th class="column-center">Delete</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Juan Dela Cruz</td>
               <td>Resident</td>
-              <td><span class="status resolved">Verified</span></td>
-              <td>Active</td>
-              <td>
-                <div style="display: flex; gap: 8px;">
-                  <button class="button"
-                    style="padding: 6px 10px; font-size: 12px; border: none; cursor: pointer;">Edit</button>
-                  <button class="button-secondary"
-                    style="padding: 6px 10px; font-size: 12px; color: #a45a00; background: #ffe4c7; border: none; cursor: pointer;">Deactivate</button>
-                  <button class="button-secondary"
-                    style="padding: 6px 10px; font-size: 12px; color: #ba1a1a; background: #ffdad6; border: none; cursor: pointer;">Delete</button>
-                </div>
-              </td>
+              <td class="cell-center"><button class="action-button action-button-success">Verified</button></td>
+              <td class="cell-center"><span class="status status-active">Active</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit">Edit</button></td>
+              <td class="cell-center"><button class="action-button action-button-warning">Deactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-danger">Delete</button></td>
             </tr>
             <tr>
               <td>Jose Rizal</td>
               <td>Resident</td>
-              <td><span class="status pending">Unverified</span></td>
-              <td>Active</td>
-              <td>
-                <div style="display: flex; gap: 8px;">
-                  <button class="button"
-                    style="padding: 6px 10px; font-size: 12px; background: #1c7a49; border: none; cursor: pointer;">Verify</button>
-                  <button class="button"
-                    style="padding: 6px 10px; font-size: 12px; border: none; cursor: pointer;">Edit</button>
-                  <button class="button-secondary"
-                    style="padding: 6px 10px; font-size: 12px; color: #ba1a1a; background: #ffdad6; border: none; cursor: pointer;">Delete</button>
-                </div>
-              </td>
+              <td class="cell-center"><button class="action-button action-button-pending">Unverified</button></td>
+              <td class="cell-center"><span class="status status-active">Active</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit">Edit</button></td>
+              <td class="cell-center"><button class="action-button action-button-warning">Deactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-danger">Delete</button></td>
             </tr>
             <tr>
               <td>Maria Clara</td>
               <td>Resident</td>
-              <td><span class="status resolved">Verified</span></td>
-              <td><span style="color: #ba1a1a; font-weight: 700;">Deactivated</span></td>
-              <td>
-                <div style="display: flex; gap: 8px;">
-                  <button class="button"
-                    style="padding: 6px 10px; font-size: 12px; border: none; cursor: pointer;">Reactivate</button>
-                  <button class="button-secondary"
-                    style="padding: 6px 10px; font-size: 12px; color: #ba1a1a; background: #ffdad6; border: none; cursor: pointer;">Delete</button>
-                </div>
-              </td>
+              <td class="cell-center"><button class="action-button action-button-success">Verified</button></td>
+              <td class="cell-center"><span class="status status-deactivated">Deactivated</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit">Edit</button></td>
+              <td class="cell-center"><button class="action-button action-button-success">Reactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-danger">Delete</button></td>
             </tr>
             <tr>
               <td>Maria Lopez</td>
               <td>Staff</td>
-              <td><span class="status resolved">Verified</span></td>
-              <td>Active</td>
-              <td>
-                <div style="display: flex; gap: 8px;">
-                  <button class="button"
-                    style="padding: 6px 10px; font-size: 12px; border: none; cursor: pointer;">Edit</button>
-                </div>
-              </td>
+              <td class="cell-center"><button class="action-button action-button-success">Verified</button></td>
+              <td class="cell-center"><span class="status status-active">Active</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit">Edit</button></td>
+              <td class="cell-center"><button class="action-button action-button-warning">Deactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-danger">Delete</button></td>
             </tr>
           </tbody>
         </table>

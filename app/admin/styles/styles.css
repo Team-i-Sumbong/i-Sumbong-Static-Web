@@ -468,6 +468,64 @@ textarea {
   color: var(--primary);
 }
 
+.users-table-panel {
+  overflow-x: auto;
+}
+
+.users-table {
+  min-width: 1100px;
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 92px;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+}
+
+.action-button-edit {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(9, 41, 133, 0.16);
+}
+
+.action-button-success {
+  background: var(--verified-bg);
+  color: var(--verified-text);
+  border-color: rgba(28, 122, 73, 0.12);
+}
+
+.action-button-pending {
+  background: var(--pending-bg);
+  color: var(--pending-text);
+  border-color: rgba(138, 103, 0, 0.12);
+}
+
+.action-button-warning {
+  background: #ffe4c7;
+  color: #a45a00;
+  border-color: rgba(164, 90, 0, 0.12);
+}
+
+.action-button-danger {
+  background: #ffdad6;
+  color: #ba1a1a;
+  border-color: rgba(186, 26, 26, 0.12);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -487,6 +545,11 @@ th {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.column-center,
+.cell-center {
+  text-align: center;
 }
 
 .table-link {
@@ -528,6 +591,16 @@ th {
 .status.verified {
   background: var(--verified-bg);
   color: var(--verified-text);
+}
+
+.status-active {
+  background: var(--progress-bg);
+  color: var(--progress-text);
+}
+
+.status-deactivated {
+  background: #ffdad6;
+  color: #ba1a1a;
 }
 
 .simple-list {

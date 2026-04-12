@@ -233,22 +233,34 @@ section {
 .hero {
   position: relative;
   background:
-    linear-gradient(180deg, #1a419a 0%, #244eae 52%, #3262c2 100%);
+    radial-gradient(circle at 18% 22%, rgba(103, 145, 255, 0.22) 0, rgba(103, 145, 255, 0) 28%),
+    radial-gradient(circle at 76% 54%, rgba(255, 214, 6, 0.08) 0, rgba(255, 214, 6, 0) 24%),
+    linear-gradient(135deg, #173782 0%, #21479f 38%, #2b58b8 68%, #3a69c9 100%);
   color: #ffffff;
   min-height: 92vh;
   display: flex;
   align-items: center;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 22, 63, 0.16), rgba(7, 22, 63, 0) 42%),
+    radial-gradient(circle at 72% 52%, rgba(255, 255, 255, 0.12) 0, rgba(255, 255, 255, 0) 26%);
+  pointer-events: none;
+}
+
 .hero::after {
   content: "";
   position: absolute;
-  inset: auto -10% -22% auto;
-  width: 360px;
-  height: 360px;
+  inset: auto -8% -20% auto;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.09);
-  filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  filter: blur(18px);
 }
 
 .hero-wrapper {
@@ -351,18 +363,37 @@ section {
   gap: 10px;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.95rem;
+  backdrop-filter: blur(10px);
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 8% 10% 10% 8%;
+  border-radius: 36px;
+  background: radial-gradient(circle, rgba(132, 166, 255, 0.28) 0, rgba(132, 166, 255, 0) 68%);
+  filter: blur(26px);
+  transform: translate(4%, 4%);
+  pointer-events: none;
 }
 
 .hero-image img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 800px;
   margin-left: auto;
   border-radius: 30px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 70px rgba(8, 20, 54, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .hero-wrapper {
