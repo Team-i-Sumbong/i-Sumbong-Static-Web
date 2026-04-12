@@ -73,6 +73,8 @@
           <thead>
             <tr>
               <th>Name</th>
+              <th>Nickname</th>
+              <th>Email</th>
               <th>Role</th>
               <th class="column-center">Verification</th>
               <th class="column-center">Status</th>
@@ -84,39 +86,99 @@
           <tbody>
             <tr>
               <td>Juan Dela Cruz</td>
+              <td>Juan</td>
+              <td>juan.delacruz@email.com</td>
               <td>Resident</td>
-              <td class="cell-center"><button class="action-button action-button-success">Verified</button></td>
-              <td class="cell-center"><span class="status status-active">Active</span></td>
-              <td class="cell-center"><button class="action-button action-button-edit">Edit</button></td>
-              <td class="cell-center"><button class="action-button action-button-warning">Deactivate</button></td>
-              <td class="cell-center"><button class="action-button action-button-danger">Delete</button></td>
+              <td class="cell-center"><button class="action-button action-button-verify">Verified</button></td>
+              <td class="cell-center"><span class="status status-active-minimal">Active</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit-icon" aria-label="Edit Juan Dela Cruz"><span
+                    class="material-symbols-outlined" aria-hidden="true">edit</span></button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-warning-text">Deactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-danger-text">Delete</button></td>
             </tr>
             <tr>
               <td>Jose Rizal</td>
+              <td>Pepe</td>
+              <td>jose.rizal@email.com</td>
               <td>Resident</td>
-              <td class="cell-center"><button class="action-button action-button-pending">Unverified</button></td>
-              <td class="cell-center"><span class="status status-active">Active</span></td>
-              <td class="cell-center"><button class="action-button action-button-edit">Edit</button></td>
-              <td class="cell-center"><button class="action-button action-button-warning">Deactivate</button></td>
-              <td class="cell-center"><button class="action-button action-button-danger">Delete</button></td>
+              <td class="cell-center"><button class="action-button action-button-pending-minimal">Unverified</button></td>
+              <td class="cell-center"><span class="status status-active-minimal">Active</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit-icon" aria-label="Edit Jose Rizal"><span
+                    class="material-symbols-outlined" aria-hidden="true">edit</span></button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-warning-text">Deactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-danger-text">Delete</button></td>
             </tr>
             <tr>
               <td>Maria Clara</td>
+              <td>Clarita</td>
+              <td>maria.clara@email.com</td>
               <td>Resident</td>
-              <td class="cell-center"><button class="action-button action-button-success">Verified</button></td>
-              <td class="cell-center"><span class="status status-deactivated">Deactivated</span></td>
-              <td class="cell-center"><button class="action-button action-button-edit">Edit</button></td>
-              <td class="cell-center"><button class="action-button action-button-success">Reactivate</button></td>
-              <td class="cell-center"><button class="action-button action-button-danger">Delete</button></td>
+              <td class="cell-center"><button class="action-button action-button-verify">Verified</button></td>
+              <td class="cell-center"><span class="status status-deactivated-minimal">Deactivated</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit-icon" aria-label="Edit Maria Clara"><span
+                    class="material-symbols-outlined" aria-hidden="true">edit</span></button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-success-text">Reactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-danger-text">Delete</button></td>
             </tr>
             <tr>
               <td>Maria Lopez</td>
+              <td>Mia</td>
+              <td>maria.lopez.staff@email.com</td>
               <td>Staff</td>
-              <td class="cell-center"><button class="action-button action-button-success">Verified</button></td>
-              <td class="cell-center"><span class="status status-active">Active</span></td>
-              <td class="cell-center"><button class="action-button action-button-edit">Edit</button></td>
-              <td class="cell-center"><button class="action-button action-button-warning">Deactivate</button></td>
-              <td class="cell-center"><button class="action-button action-button-danger">Delete</button></td>
+              <td class="cell-center"><button class="action-button action-button-verify">Verified</button></td>
+              <td class="cell-center"><span class="status status-active-minimal">Active</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit-icon" aria-label="Edit Maria Lopez"><span
+                    class="material-symbols-outlined" aria-hidden="true">edit</span></button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-warning-text">Deactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-danger-text">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Antonio Reyes</td>
+              <td>Tony</td>
+              <td>antonio.reyes@email.com</td>
+              <td>Resident</td>
+              <td class="cell-center"><button class="action-button action-button-pending-minimal">Unverified</button></td>
+              <td class="cell-center"><span class="status status-review-minimal">Pending Review</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit-icon" aria-label="Edit Antonio Reyes"><span
+                    class="material-symbols-outlined" aria-hidden="true">edit</span></button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-warning-text">Deactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-danger-text">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Elena Santos</td>
+              <td>Ella</td>
+              <td>elena.santos@email.com</td>
+              <td>Staff</td>
+              <td class="cell-center"><button class="action-button action-button-verify">Verified</button></td>
+              <td class="cell-center"><span class="status status-suspended-minimal">Suspended</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit-icon" aria-label="Edit Elena Santos"><span
+                    class="material-symbols-outlined" aria-hidden="true">edit</span></button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-success-text">Reactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-danger-text">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Christopher Villanueva</td>
+              <td>Chris</td>
+              <td>christopher.villanueva@email.com</td>
+              <td>Resident</td>
+              <td class="cell-center"><button class="action-button action-button-verify">Verified</button></td>
+              <td class="cell-center"><span class="status status-active-minimal">Active</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit-icon" aria-label="Edit Christopher Villanueva"><span
+                    class="material-symbols-outlined" aria-hidden="true">edit</span></button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-warning-text">Deactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-danger-text">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Angela Bautista</td>
+              <td>Gel</td>
+              <td>angela.bautista@email.com</td>
+              <td>Staff</td>
+              <td class="cell-center"><button class="action-button action-button-pending-minimal">Unverified</button></td>
+              <td class="cell-center"><span class="status status-inactive-minimal">Inactive</span></td>
+              <td class="cell-center"><button class="action-button action-button-edit-icon" aria-label="Edit Angela Bautista"><span
+                    class="material-symbols-outlined" aria-hidden="true">edit</span></button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-success-text">Reactivate</button></td>
+              <td class="cell-center"><button class="action-button action-button-inline action-button-danger-text">Delete</button></td>
             </tr>
           </tbody>
         </table>

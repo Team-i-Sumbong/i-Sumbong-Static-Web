@@ -221,12 +221,12 @@ textarea {
   justify-content: space-between;
   align-items: stretch;
   gap: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   padding: 28px 30px;
   border-radius: 26px;
   overflow: hidden;
   background: linear-gradient(180deg, #1a419a 0%, #244eae 52%, #3262c2 100%);
-  box-shadow: 0 20px 40px rgba(18, 52, 141, 0.28);
+  box-shadow: 0 14px 28px rgba(18, 52, 141, 0.18);
   color: #fff;
 }
 
@@ -307,6 +307,7 @@ textarea {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
+  margin-top: 12px;
   margin-bottom: 24px;
 }
 
@@ -321,15 +322,15 @@ textarea {
 }
 
 .card-blue {
-  background: #cddaf4;
+  background: #d7e4ff;
 }
 
 .card-red {
-  background: #ffd9d8;
+  background: #ffd8d6;
 }
 
 .card-green {
-  background: #dcfce7;
+  background: #d8f7e3;
 }
 
 .card-blue .card-label,
@@ -378,6 +379,11 @@ textarea {
 .panel,
 .table-panel {
   padding: 20px;
+}
+
+.card-grid .card {
+  border-color: rgba(9, 41, 133, 0.16);
+  box-shadow: 0 14px 28px rgba(18, 52, 141, 0.12);
 }
 
 .metric-head {
@@ -538,9 +544,11 @@ th {
 }
 
 .simple-item {
-  padding: 14px;
+  padding: 18px 18px 16px;
   border-radius: 12px;
-  background: var(--panel-soft);
+  background: var(--panel);
+  border: 1px solid #cfd9ee;
+  box-shadow: 0 8px 22px rgba(18, 52, 141, 0.06);
 }
 
 .simple-item-row {
@@ -559,7 +567,7 @@ th {
 
 .simple-item p {
   margin: 0;
-  color: var(--muted);
+  color: #4f607f;
   line-height: 1.5;
   font-size: 14px;
 }
@@ -580,10 +588,11 @@ th {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px 16px;
-  border: 1px solid var(--border);
+  padding: 18px 18px 16px;
+  border: 1px solid #cfd9ee;
   border-radius: 12px;
-  background: var(--panel-soft);
+  background: var(--panel);
+  box-shadow: 0 8px 22px rgba(18, 52, 141, 0.06);
 }
 
 .toggle-copy h3 {
@@ -594,7 +603,7 @@ th {
 
 .toggle-copy p {
   margin: 0;
-  color: var(--muted);
+  color: #4f607f;
   font-size: 14px;
 }
 
