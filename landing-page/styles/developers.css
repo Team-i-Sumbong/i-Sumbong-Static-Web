@@ -381,19 +381,14 @@ textarea {
   align-items: start;
 }
 
-.headshot-placeholder {
+.developer-photo {
   width: 120px;
   height: 120px;
   border-radius: 24px;
-  background: linear-gradient(145deg, rgba(16, 46, 115, 0.14) 0%, rgba(24, 72, 178, 0.24) 100%);
-  border: 1px dashed rgba(16, 46, 115, 0.22);
-  color: var(--primary);
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid rgba(16, 46, 115, 0.12);
+  box-shadow: 0 12px 24px rgba(10, 29, 72, 0.12);
 }
 
 .developer-copy {
@@ -607,7 +602,7 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .headshot-placeholder {
+  .developer-photo {
     width: 100px;
     height: 100px;
   }
