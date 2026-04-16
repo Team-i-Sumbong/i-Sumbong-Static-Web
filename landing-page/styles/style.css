@@ -77,8 +77,6 @@ img {
 
 .mobile-nav-backdrop {
   display: none;
-  border: 0;
-  padding: 0;
 }
 
 .mobile-nav-drawer {
@@ -386,19 +384,6 @@ section {
   position: relative;
 }
 
-.hero-text,
-.hero-image,
-.card,
-.feature-card,
-.step,
-.benefit-box,
-.about-panel,
-.contact-card,
-.contact-form,
-.footer-grid > div {
-  min-width: 0;
-}
-
 .hero-image::before {
   content: "";
   position: absolute;
@@ -449,7 +434,6 @@ section {
   line-height: 1.12;
   letter-spacing: -0.035em;
   color: var(--primary-dark);
-  overflow-wrap: anywhere;
 }
 
 .section-subtitle {
@@ -682,7 +666,6 @@ section {
   line-height: 1.1;
   letter-spacing: -0.035em;
   margin-bottom: 14px;
-  overflow-wrap: anywhere;
 }
 
 .cta-copy {
@@ -919,10 +902,6 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  section {
-    padding: 80px 0;
-  }
-
   .hero-wrapper,
   .about-grid,
   .contact-grid,
@@ -933,10 +912,6 @@ footer {
   .hero {
     min-height: auto;
     padding: 110px 0 88px;
-  }
-
-  .hero-wrapper {
-    gap: 32px;
   }
 
   .hero-image img {
@@ -955,20 +930,6 @@ footer {
     display: none;
   }
 
-  .footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .section-heading {
-    margin-bottom: 36px;
-  }
-
-  .cta-panel {
-    padding: 34px;
-  }
-}
-
-@media (max-width: 860px) {
   .mobile-menu-toggle {
     display: inline-flex;
     margin-left: auto;
@@ -1012,12 +973,11 @@ footer {
     bottom: 0;
     display: flex;
     flex-direction: column;
-    width: min(360px, calc(100vw - 12px));
+    width: min(360px, 100vw);
     height: calc(100dvh - var(--topbar-mobile-offset));
     padding: 20px 20px 24px;
     background: rgba(255, 255, 255, 0.98);
     border-left: 1px solid rgba(216, 223, 236, 0.9);
-    border-radius: 18px 0 0 18px;
     box-shadow: 0 20px 44px rgba(10, 29, 72, 0.18);
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -1102,10 +1062,6 @@ footer {
     --topbar-mobile-offset: 92px;
   }
 
-  section[id] {
-    scroll-margin-top: 96px;
-  }
-
   section {
     padding: 72px 0;
   }
@@ -1124,15 +1080,7 @@ footer {
   }
 
   .mobile-nav-drawer {
-    width: min(320px, calc(100vw - 10px));
-  }
-
-  .hero {
-    padding: 92px 0 72px;
-  }
-
-  .hero-wrapper {
-    gap: 24px;
+    width: min(320px, 100vw);
   }
 
   .footer-bottom {
@@ -1140,26 +1088,14 @@ footer {
     align-items: flex-start;
   }
 
-  .section-kicker {
-    font-size: 1.5rem;
-    letter-spacing: 0.12em;
-  }
-
   .hero-text h1 {
     font-size: 2.35rem;
-  }
-
-  .hero-description,
-  .section-subtitle,
-  .cta-copy {
-    font-size: 0.98rem;
   }
 
   .hero-actions,
   .hero-highlights {
     flex-direction: column;
     align-items: stretch;
-    width: min(100%, 420px);
   }
 
   .btn,
@@ -1174,9 +1110,6 @@ footer {
   .cta-actions {
     flex-direction: column;
     align-items: stretch;
-    width: min(100%, 420px);
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .issue-cards,
@@ -1203,69 +1136,5 @@ footer {
   .contact-card,
   .contact-form {
     padding: 24px;
-  }
-}
-
-@media (max-width: 540px) {
-  .container {
-    width: min(1120px, 94%);
-  }
-
-  section {
-    padding: 64px 0;
-  }
-
-  .topbar-content {
-    gap: 10px;
-    padding: 12px 0;
-  }
-
-  .brand-logo {
-    width: 48px;
-    height: 48px;
-  }
-
-  .brand-title {
-    font-size: 1.2rem;
-  }
-
-  .hero {
-    padding: 84px 0 64px;
-  }
-
-  .hero::after {
-    display: none;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .section-title,
-  .features-title,
-  .benefits-header h2,
-  .contact-card h2,
-  .about-panel h2,
-  .cta-panel h2 {
-    font-size: 1.8rem;
-  }
-
-  .card,
-  .feature-card,
-  .step,
-  .benefit-box,
-  .about-panel,
-  .contact-card,
-  .contact-form {
-    padding: 20px;
-  }
-
-  .cta-panel {
-    padding: 24px 18px;
-    border-radius: 22px;
-  }
-
-  .footer-grid {
-    gap: 18px;
   }
 }
