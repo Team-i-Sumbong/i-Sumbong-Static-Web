@@ -71,7 +71,8 @@
           </div><a href="dashboard.html" class="button-secondary"><span class="material-symbols-outlined"
               aria-hidden="true">arrow_back</span><span>Back to Dashboard</span></a>
         </div>
-        <table>
+        <div class="table-scroll">
+        <table class="reports-table reports-table-admin">
           <thead>
             <tr>
               <th>Title</th>
@@ -122,8 +123,37 @@
               <td>Purok 1</td>
               <td><span class="status status-pill pending">Pending</span></td>
             </tr>
+            <tr>
+              <td><a href="report-view-window.html"
+                  onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
+                  class="table-link"><span class="material-symbols-outlined"
+                    aria-hidden="true">open_in_new</span><span>Clogged canal near elementary school</span></a></td>
+              <td>Sanitation</td>
+              <td>Mar 31, 2026</td>
+              <td>School Zone</td>
+              <td><span class="status status-pill progress">In Progress</span></td>
+            </tr>
+            <tr>
+              <td><a href="report-view-window.html"
+                  onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
+                  class="table-link"><span class="material-symbols-outlined"
+                    aria-hidden="true">open_in_new</span><span>Damaged pedestrian lane marker</span></a></td>
+              <td>Infrastructure</td>
+              <td>Mar 29, 2026</td>
+              <td>National Road</td>
+              <td><span class="status status-pill resolved">Resolved</span></td>
+            </tr>
           </tbody>
         </table>
+        </div>
+        <div class="table-footer">
+          <p class="muted">Showing 1-6 of 12 reports.</p>
+          <nav class="pagination" aria-label="Admin reports pages">
+            <a href="reports.html" class="pagination-link active" aria-current="page">1</a>
+            <a href="reports-page-2.html" class="pagination-link">2</a>
+            <a href="reports-page-2.html" class="pagination-link pagination-next">Next</a>
+          </nav>
+        </div>
       </section>
     </main>
   </div>

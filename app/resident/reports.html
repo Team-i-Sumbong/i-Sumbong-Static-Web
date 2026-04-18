@@ -70,7 +70,8 @@
             onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"><span
               class="material-symbols-outlined button-icon" aria-hidden="true">post_add</span><span>Submit Report</span></a>
         </div>
-        <table>
+        <div class="table-scroll">
+        <table class="reports-table">
           <thead>
             <tr>
               <th>Title</th>
@@ -107,8 +108,44 @@
               <td>Mar 30, 2026</td>
               <td><span class="status resolved">Resolved</span></td>
             </tr>
+            <tr>
+              <td><a href="report-view-window.html"
+                  onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
+                  class="table-link"><span class="material-symbols-outlined"
+                    aria-hidden="true">open_in_new</span><span>Blocked drainage behind public market</span></a></td>
+              <td>Sanitation</td>
+              <td>Mar 28, 2026</td>
+              <td><span class="status pending">Pending</span></td>
+            </tr>
+            <tr>
+              <td><a href="report-view-window.html"
+                  onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
+                  class="table-link"><span class="material-symbols-outlined"
+                    aria-hidden="true">open_in_new</span><span>Damaged waiting shed roof near plaza</span></a></td>
+              <td>Infrastructure</td>
+              <td>Mar 25, 2026</td>
+              <td><span class="status progress">In Progress</span></td>
+            </tr>
+            <tr>
+              <td><a href="report-view-window.html"
+                  onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
+                  class="table-link"><span class="material-symbols-outlined"
+                    aria-hidden="true">open_in_new</span><span>Uncollected garbage near daycare center</span></a></td>
+              <td>Sanitation</td>
+              <td>Mar 21, 2026</td>
+              <td><span class="status resolved">Resolved</span></td>
+            </tr>
           </tbody>
         </table>
+        </div>
+        <div class="table-footer">
+          <p class="muted">Showing 1-6 of 12 submitted reports.</p>
+          <nav class="pagination" aria-label="Resident reports pages">
+            <a href="reports.html" class="pagination-link active" aria-current="page">1</a>
+            <a href="reports-page-2.html" class="pagination-link">2</a>
+            <a href="reports-page-2.html" class="pagination-link pagination-next">Next</a>
+          </nav>
+        </div>
       </section>
     </main>
   </div>
