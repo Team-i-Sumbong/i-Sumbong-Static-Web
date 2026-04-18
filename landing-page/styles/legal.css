@@ -22,7 +22,7 @@ html, body {
   --radius-md: 18px;
   --radius-lg: 26px;
   --mobile-nav-link-padding: 14px;
-  --topbar-mobile-offset: 104px;
+  --topbar-height: 104px;
 }
 
 html {
@@ -32,8 +32,6 @@ html {
 
 body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   color: var(--text);
   background:
@@ -55,8 +53,10 @@ a {
 }
 
 .topbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 220;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(14px);
@@ -68,7 +68,8 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 18px 0;
+  min-height: var(--topbar-height);
+  padding: 0;
 }
 
 .mobile-nav-backdrop {
@@ -216,8 +217,8 @@ a {
 }
 
 .main-content {
-  flex: 1;
-  padding: 64px 0;
+  min-height: calc(100vh - var(--topbar-height));
+  padding: calc(var(--topbar-height) + 64px) 0 64px;
 }
 
 .hero-card,
@@ -408,7 +409,7 @@ a {
   .mobile-nav-backdrop {
     display: block;
     position: fixed;
-    inset: 0;
+    inset: var(--topbar-height) 0 0;
     background: rgba(10, 29, 72, 0.32);
     opacity: 0;
     pointer-events: none;
@@ -418,13 +419,14 @@ a {
   }
 
   .mobile-nav-drawer {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: var(--topbar-height);
     right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     width: min(320px, 100vw);
-    max-height: calc(100dvh - 100%);
+    height: calc(100dvh - var(--topbar-height));
     padding: 14px 14px 18px;
     background: rgba(255, 255, 255, 0.98);
     border-left: 1px solid rgba(216, 223, 236, 0.9);
@@ -528,12 +530,11 @@ a {
 
 @media (max-width: 720px) {
   :root {
-    --topbar-mobile-offset: 92px;
+    --topbar-height: 92px;
   }
 
   .topbar-content {
     gap: 14px;
-    padding: 14px 0;
   }
 
   .brand-title {

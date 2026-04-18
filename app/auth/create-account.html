@@ -25,13 +25,12 @@
         </div>
       </a>
 
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation"
-        onclick="document.body.classList.toggle('menu-open')">
+      <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu"
+        aria-expanded="false">
         <span class="material-symbols-outlined">menu</span>
       </button>
 
-      <div class="mobile-nav-backdrop" aria-hidden="true"
-        onclick="document.body.classList.remove('menu-open')"></div>
+      <div class="mobile-nav-backdrop" aria-hidden="true"></div>
 
       <div class="mobile-nav-drawer">
         <nav class="topbar-nav nav-center" aria-label="Promotional sections">
@@ -246,6 +245,7 @@
       </div>
     </div>
   </footer>
+  <script src="../../landing-page/js/mobile-nav.js"></script>
 </body>
 
 </html>

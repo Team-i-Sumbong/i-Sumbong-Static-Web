@@ -5,11 +5,21 @@
   var backdrop = document.querySelector(".mobile-nav-backdrop");
   var drawerLinks = drawer ? drawer.querySelectorAll("a") : [];
   var menuIcon = toggleButton ? toggleButton.querySelector(".material-symbols-outlined") : null;
+  var desktopMediaQuery = window.matchMedia("(min-width: 1025px)");
   var mobileBreakpoint = window.matchMedia("(max-width: 1024px)");
 
   if (!toggleButton || !drawer || !backdrop) {
     return;
   }
+
+  if (!drawer.id) {
+    drawer.id = "landing-mobile-nav";
+  }
+
+  toggleButton.type = "button";
+  toggleButton.setAttribute("aria-controls", drawer.id);
+  toggleButton.removeAttribute("onclick");
+  backdrop.removeAttribute("onclick");
 
   function setMenuState(isOpen) {
     var isMobile = mobileBreakpoint.matches;
@@ -52,6 +62,16 @@
     });
   } else if (typeof mobileBreakpoint.addListener === "function") {
     mobileBreakpoint.addListener(function () {
+      setMenuState(false);
+    });
+  }
+
+  if (typeof desktopMediaQuery.addEventListener === "function") {
+    desktopMediaQuery.addEventListener("change", function () {
+      setMenuState(false);
+    });
+  } else if (typeof desktopMediaQuery.addListener === "function") {
+    desktopMediaQuery.addListener(function () {
       setMenuState(false);
     });
   }
