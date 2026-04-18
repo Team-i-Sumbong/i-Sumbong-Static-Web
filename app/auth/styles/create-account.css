@@ -593,7 +593,7 @@ textarea {
 .footer {
   background: var(--primary-dark);
   color: #ffffff;
-  padding: 28px 0;
+  padding: 54px 0 28px;
 }
 
 .footer-grid {
