@@ -835,6 +835,10 @@ textarea {
     align-items: flex-start;
   }
 
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
   .signup-intro,
   .signup-card {
     padding: 28px 24px;
