@@ -12,6 +12,7 @@
     rel="stylesheet" />
   <script src="../shared/theme.js"></script>
   <script src="../shared/sidebar.js" defer></script>
+  <script src="../shared/dashboard-modals.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
           <p class="brand-subtitle">Admin reports</p>
         </div>
       </div>
-      <a href="profile.html" class="topbar-user" onclick="window.open(this.href, '_blank', 'width=960,height=900'); return false;" style="text-decoration: none;"><span class="material-symbols-outlined"
+      <a href="profile.html" class="topbar-user" data-modal-type="profile" style="text-decoration: none;"><span class="material-symbols-outlined"
           aria-hidden="true">badge</span><span>Maria Lopez</span><span>•</span><span>Barangay Staff</span></a>
     </header>
     <aside class="sidebar">
@@ -84,9 +85,7 @@
             </thead>
             <tbody>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Overgrown grass beside multipurpose hall</span></a></td>
                 <td>Maintenance</td>
                 <td>Mar 27, 2026</td>
@@ -94,9 +93,7 @@
                 <td><span class="status status-pill pending">Pending</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Public faucet not working in sitio center</span></a></td>
                 <td>Utilities</td>
                 <td>Mar 25, 2026</td>
@@ -104,9 +101,7 @@
                 <td><span class="status status-pill progress">In Progress</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Streetlight flickering near chapel</span></a></td>
                 <td>Infrastructure</td>
                 <td>Mar 24, 2026</td>
@@ -114,9 +109,7 @@
                 <td><span class="status status-pill resolved">Resolved</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Loose electrical wire near sari-sari store</span></a></td>
                 <td>Safety</td>
                 <td>Mar 22, 2026</td>
@@ -124,9 +117,7 @@
                 <td><span class="status status-pill pending">Pending</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Canal cover damaged beside health center</span></a></td>
                 <td>Infrastructure</td>
                 <td>Mar 20, 2026</td>
@@ -134,9 +125,7 @@
                 <td><span class="status status-pill progress">In Progress</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Noise complaint near tricycle terminal</span></a></td>
                 <td>Complaint</td>
                 <td>Mar 18, 2026</td>

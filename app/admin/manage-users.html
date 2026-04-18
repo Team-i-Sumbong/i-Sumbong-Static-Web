@@ -12,6 +12,7 @@
     rel="stylesheet" />
   <script src="../shared/theme.js"></script>
   <script src="../shared/sidebar.js" defer></script>
+  <script src="../shared/dashboard-modals.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
           <p class="brand-subtitle">Admin user management</p>
         </div>
       </div>
-      <a href="profile.html" class="topbar-user" onclick="window.open(this.href, '_blank', 'width=960,height=900'); return false;" style="text-decoration: none;"><span class="material-symbols-outlined"
+      <a href="profile.html" class="topbar-user" data-modal-type="profile" style="text-decoration: none;"><span class="material-symbols-outlined"
           aria-hidden="true">badge</span><span>Maria Lopez</span><span>•</span><span>Barangay Staff</span></a>
     </header>
     <aside class="sidebar">

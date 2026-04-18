@@ -12,6 +12,7 @@
     rel="stylesheet" />
   <script src="../shared/theme.js"></script>
   <script src="../shared/sidebar.js" defer></script>
+  <script src="../shared/dashboard-modals.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
           <p class="brand-subtitle">Admin announcements</p>
         </div>
       </div>
-      <a href="profile.html" class="topbar-user" onclick="window.open(this.href, '_blank', 'width=960,height=900'); return false;" style="text-decoration: none;"><span class="material-symbols-outlined"
+      <a href="profile.html" class="topbar-user" data-modal-type="profile" style="text-decoration: none;"><span class="material-symbols-outlined"
           aria-hidden="true">badge</span><span>Maria Lopez</span><span>•</span><span>Barangay Staff</span></a>
     </header>
     <aside class="sidebar">
@@ -71,30 +72,84 @@
                 aria-hidden="true">add</span><span>Add Announcement</span></button>
           </div>
         </div>
-        <article class="simple-item">
-          <h3>Drainage cleanup on April 6</h3>
-          <p>Residents in Mabini Street and Purok 3 are advised to keep pathways clear during maintenance.</p>
-          <div class="button-row">
-            <button class="button-secondary"><span class="material-symbols-outlined button-icon"
-                aria-hidden="true">delete</span><span>Delete</span></button>
-          </div>
-        </article>
-        <article class="simple-item">
-          <h3>Barangay hall office hours</h3>
-          <p>Walk-in follow-up inquiries will be accepted from 8:00 AM to 5:00 PM on weekdays.</p>
-          <div class="button-row">
-            <button class="button-secondary"><span class="material-symbols-outlined button-icon"
-                aria-hidden="true">delete</span><span>Delete</span></button>
-          </div>
-        </article>
-        <article class="simple-item">
-          <h3>Waste segregation reminder</h3>
-          <p>Please separate biodegradable and non-biodegradable waste before collection day.</p>
-          <div class="button-row">
-            <button class="button-secondary"><span class="material-symbols-outlined button-icon"
-                aria-hidden="true">delete</span><span>Delete</span></button>
-          </div>
-        </article>
+        <div class="announcement-grid">
+          <article class="announcement-card announcement-card-featured" tabindex="0" role="button"
+            data-modal-type="announcement"
+            data-category="Community Notice"
+            data-date="Apr 6, 2026"
+            data-priority="Pinned"
+            data-title="Drainage cleanup operations begin in affected zones"
+            data-preview="Cleanup teams will start clearing drainage lines in Mabini Street, Purok 3, and nearby low-lying areas this Monday."
+            data-body="Barangay maintenance teams will begin drainage cleanup operations on April 6 across Mabini Street, Purok 3, and nearby low-lying areas. Residents are advised to keep pathways clear, avoid parking near active cleanup sites, and report any blocked access points so the team can respond quickly."
+            data-author="Barangay Operations Team"
+            data-image-src="../../landing-page/images/hero-image.jpg"
+            data-image-alt="Cleanup activity sample for a barangay announcement">
+            <div class="announcement-card-media">
+              <img src="../../landing-page/images/hero-image.jpg" alt="Cleanup activity sample for a barangay announcement">
+            </div>
+            <div class="announcement-card-body">
+              <div class="announcement-card-meta">
+                <span class="announcement-chip">Community Notice</span>
+                <span class="announcement-chip announcement-chip-priority">Pinned</span>
+                <span class="announcement-date">Apr 6, 2026</span>
+              </div>
+              <h3>Drainage cleanup operations begin in affected zones</h3>
+              <p class="announcement-preview">Cleanup teams will start clearing drainage lines in Mabini Street, Purok 3, and nearby low-lying areas this Monday.</p>
+            </div>
+            <div class="announcement-card-footer">
+              <span class="announcement-card-cta"><span class="material-symbols-outlined" aria-hidden="true">open_in_full</span><span>Open Notice</span></span>
+              <div class="announcement-admin-actions">
+                <button type="button" class="button-secondary announcement-manage-action" data-modal-ignore><span class="material-symbols-outlined button-icon" aria-hidden="true">edit_square</span><span>Edit</span></button>
+                <button type="button" class="button-secondary announcement-manage-action" data-modal-ignore><span class="material-symbols-outlined button-icon" aria-hidden="true">delete</span><span>Delete</span></button>
+              </div>
+            </div>
+          </article>
+          <article class="announcement-card" tabindex="0" role="button"
+            data-modal-type="announcement"
+            data-category="Barangay Services"
+            data-date="Apr 4, 2026"
+            data-priority="Urgent"
+            data-title="Updated barangay hall office hours this week"
+            data-preview="Walk-in follow-up inquiries will be accepted from 8:00 AM to 5:00 PM on weekdays while the records desk completes inventory."
+            data-body="The barangay hall will continue to accept walk-in follow-up inquiries from 8:00 AM to 5:00 PM on weekdays while the records desk completes this week's inventory update. Residents are encouraged to bring valid identification and any report reference number to help staff process inquiries faster."
+            data-author="Front Desk Team">
+            <div class="announcement-card-body">
+              <div class="announcement-card-meta">
+                <span class="announcement-chip">Barangay Services</span>
+                <span class="announcement-chip announcement-chip-priority">Urgent</span>
+                <span class="announcement-date">Apr 4, 2026</span>
+              </div>
+              <h3>Updated barangay hall office hours this week</h3>
+              <p class="announcement-preview">Walk-in follow-up inquiries will be accepted from 8:00 AM to 5:00 PM on weekdays while the records desk completes inventory.</p>
+            </div>
+            <div class="announcement-card-footer">
+              <span class="announcement-card-cta"><span class="material-symbols-outlined" aria-hidden="true">open_in_full</span><span>Read More</span></span>
+              <div class="announcement-admin-actions">
+                <button type="button" class="button-secondary announcement-manage-action" data-modal-ignore><span class="material-symbols-outlined button-icon" aria-hidden="true">push_pin</span><span>Pin</span></button>
+              </div>
+            </div>
+          </article>
+          <article class="announcement-card" tabindex="0" role="button"
+            data-modal-type="announcement"
+            data-category="Sanitation"
+            data-date="Apr 2, 2026"
+            data-title="Waste segregation reminder before collection day"
+            data-preview="Please separate biodegradable and non-biodegradable waste before the Thursday pickup schedule."
+            data-body="Residents are reminded to separate biodegradable and non-biodegradable waste before the Thursday pickup schedule. Proper segregation helps reduce delays during collection and keeps the transfer point cleaner for the next round of hauling."
+            data-author="Environmental Desk">
+            <div class="announcement-card-body">
+              <div class="announcement-card-meta">
+                <span class="announcement-chip">Sanitation</span>
+                <span class="announcement-date">Apr 2, 2026</span>
+              </div>
+              <h3>Waste segregation reminder before collection day</h3>
+              <p class="announcement-preview">Please separate biodegradable and non-biodegradable waste before the Thursday pickup schedule.</p>
+            </div>
+            <div class="announcement-card-footer">
+              <span class="announcement-card-cta"><span class="material-symbols-outlined" aria-hidden="true">open_in_full</span><span>Read More</span></span>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
   </div>

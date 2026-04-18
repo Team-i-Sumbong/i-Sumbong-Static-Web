@@ -12,6 +12,7 @@
     rel="stylesheet" />
   <script src="../shared/theme.js"></script>
   <script src="../shared/sidebar.js" defer></script>
+  <script src="../shared/dashboard-modals.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
           <p class="brand-subtitle">Resident dashboard</p>
         </div>
       </div>
-      <a href="profile.html" class="topbar-user" onclick="window.open(this.href, '_blank', 'width=960,height=900'); return false;" style="text-decoration: none;"><span class="material-symbols-outlined"
+      <a href="profile.html" class="topbar-user" data-modal-type="profile" style="text-decoration: none;"><span class="material-symbols-outlined"
           aria-hidden="true">account_circle</span><span>Juan Dela Cruz</span><span>•</span><span>Resident</span></a>
     </header>
     <aside class="sidebar">
@@ -122,20 +123,27 @@
           </div>
         </article>
         <div class="simple-list">
-          <article class="panel">
-            <div class="panel-header">
-              <div>
-                <p class="section-label">Announcements</p>
-                <div class="panel-heading-inline"><span class="material-symbols-outlined section-icon"
-                    aria-hidden="true">notifications</span>
-                  <h2>Latest notice</h2>
-                </div>
+          <article class="announcement-card" tabindex="0" role="button"
+            data-modal-type="announcement"
+            data-category="Community Notice"
+            data-date="Apr 6, 2026"
+            data-priority="New"
+            data-title="Drainage cleanup operations begin in affected areas"
+            data-preview="Cleanup teams will begin clearing drainage lines this Monday. Residents are advised to avoid parked obstructions near work zones."
+            data-body="Cleanup teams will begin clearing drainage lines this Monday in the affected areas. Residents are advised to avoid parked obstructions near work zones and use alternate footpaths where needed while the clearing operation is in progress."
+            data-author="Barangay Operations Team">
+            <div class="announcement-card-body">
+              <div class="announcement-card-meta">
+                <span class="announcement-chip">Community Notice</span>
+                <span class="announcement-chip announcement-chip-priority">New</span>
+                <span class="announcement-date">Apr 6, 2026</span>
               </div>
+              <h3>Drainage cleanup operations begin in affected areas</h3>
+              <p class="announcement-preview">Cleanup teams will begin clearing drainage lines this Monday. Residents are advised to avoid parked obstructions near work zones.</p>
             </div>
-            <p class="muted">Drainage cleanup operations will begin on April 6 in the affected areas.</p>
-            <div class="button-row"><a href="announcements.html" class="button-secondary dashboard-outline-action"><span
-                  class="material-symbols-outlined" aria-hidden="true">visibility</span><span>View
-                  Announcements</span></a></div>
+            <div class="announcement-card-footer">
+              <span class="announcement-card-cta"><span class="material-symbols-outlined" aria-hidden="true">open_in_full</span><span>Read Notice</span></span>
+            </div>
           </article>
         </div>
       </section>

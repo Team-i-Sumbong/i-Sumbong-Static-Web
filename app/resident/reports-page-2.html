@@ -12,6 +12,7 @@
     rel="stylesheet" />
   <script src="../shared/theme.js"></script>
   <script src="../shared/sidebar.js" defer></script>
+  <script src="../shared/dashboard-modals.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
           <p class="brand-subtitle">Resident reports</p>
         </div>
       </div>
-      <a href="profile.html" class="topbar-user" onclick="window.open(this.href, '_blank', 'width=960,height=900'); return false;" style="text-decoration: none;"><span class="material-symbols-outlined"
+      <a href="profile.html" class="topbar-user" data-modal-type="profile" style="text-decoration: none;"><span class="material-symbols-outlined"
           aria-hidden="true">account_circle</span><span>Juan Dela Cruz</span><span>•</span><span>Resident</span></a>
     </header>
     <aside class="sidebar">
@@ -82,54 +83,42 @@
             </thead>
             <tbody>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Water leak near basketball court</span></a></td>
                 <td>Utilities</td>
                 <td>Mar 18, 2026</td>
                 <td><span class="status pending">Pending</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Stray dogs near health center entrance</span></a></td>
                 <td>Safety</td>
                 <td>Mar 15, 2026</td>
                 <td><span class="status progress">In Progress</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Lost phone reported near barangay hall</span></a></td>
                 <td>Lost and Found</td>
                 <td>Mar 12, 2026</td>
                 <td><span class="status resolved">Resolved</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Fallen tree branch blocking footpath</span></a></td>
                 <td>Infrastructure</td>
                 <td>Mar 10, 2026</td>
                 <td><span class="status resolved">Resolved</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Street sign vandalized near school gate</span></a></td>
                 <td>Property Damage</td>
                 <td>Mar 8, 2026</td>
                 <td><span class="status progress">In Progress</span></td>
               </tr>
               <tr>
-                <td><a href="report-view-window.html"
-                    onclick="window.open(this.href, '_blank', 'width=900,height=800'); return false;"
-                    class="table-link"><span class="material-symbols-outlined"
+                <td><a href="report-view-window.html" class="table-link" data-modal-type="report"><span class="material-symbols-outlined"
                       aria-hidden="true">open_in_new</span><span>Floodwater pooling near chapel alley</span></a></td>
                 <td>Infrastructure</td>
                 <td>Mar 4, 2026</td>
