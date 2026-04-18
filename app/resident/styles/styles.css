@@ -891,6 +891,7 @@ th {
 
   .welcome-banner {
     flex-direction: column;
+    align-items: flex-start;
     padding: 24px;
   }
 
@@ -899,8 +900,7 @@ th {
   }
 
   .welcome-orbs {
-    min-width: 0;
-    min-height: 110px;
+    display: none;
   }
 
   .card-grid,
