@@ -170,10 +170,33 @@
     );
   }
 
+  function reportComposeContent() {
+    return (
+      '<div class="dashboard-modal-shell">' +
+      '<div class="dashboard-modal-head">' +
+      '<div><p class="page-kicker">New Report</p><h2 id="dashboard-modal-title">Submit report</h2><p class="window-note">Provide the key details of your concern so it can be reviewed and routed more clearly.</p></div>' +
+      '<button type="button" class="dashboard-modal-close" data-modal-close aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>' +
+      "</div>" +
+      '<div class="window-meta"><span class="window-chip"><span class="material-symbols-outlined" aria-hidden="true">person</span><span>Resident</span></span><span class="window-chip"><span class="material-symbols-outlined" aria-hidden="true">draft</span><span>Draft report</span></span></div>' +
+      '<section class="window-section panel">' +
+      '<div class="panel-heading-inline"><span class="material-symbols-outlined" aria-hidden="true">article</span><h2>Report details</h2></div>' +
+      '<div class="form-grid">' +
+      '<div class="field"><label for="modal-report-category">Category</label><select id="modal-report-category"><option>Infrastructure</option><option>Complaint</option><option>Incident</option><option>Sanitation</option></select></div>' +
+      '<div class="field"><label for="modal-report-title">Report title</label><input id="modal-report-title" type="text" maxlength="80" placeholder="Enter a short report title" /><p class="field-meta">Recommended max length: 80 characters.</p></div>' +
+      '<div class="field"><label for="modal-report-location">Location</label><input id="modal-report-location" type="text" maxlength="120" placeholder="Enter street, purok, or landmark" /><p class="field-meta">Recommended max length: 120 characters.</p></div>' +
+      '<div class="field"><label for="modal-report-details">Details</label><textarea id="modal-report-details" maxlength="600" placeholder="Describe the concern clearly"></textarea><p class="field-meta">Recommended max length: 600 characters.</p></div>' +
+      "</div>" +
+      '<div class="button-row"><button type="button" class="button"><span class="material-symbols-outlined" aria-hidden="true">send</span><span>Submit Report</span></button><button type="button" class="button-secondary" data-modal-close><span class="material-symbols-outlined" aria-hidden="true">close</span><span>Back</span></button></div>' +
+      "</section>" +
+      "</div>"
+    );
+  }
+
   function reportContent(trigger) {
     var row = trigger.closest("tr");
     var cells = row ? row.querySelectorAll("td") : [];
-    var fallbackTitle = trigger.textContent ? trigger.textContent.trim() : "Community concern";
+    var titleNode = trigger.querySelector("span:last-child");
+    var fallbackTitle = titleNode ? titleNode.textContent.trim() : (trigger.textContent ? trigger.textContent.trim() : "Community concern");
     var title = escapeHtml(trigger.dataset.title || fallbackTitle);
     var category = escapeHtml(trigger.dataset.category || (cells[1] ? cells[1].textContent.trim() : "Community concern"));
     var date = escapeHtml(trigger.dataset.date || (cells[2] ? cells[2].textContent.trim() : "Apr 4, 2026"));
@@ -219,7 +242,7 @@
       '</h2></div><div class="button-row">' +
       (isAdmin
         ? '<button type="button" class="button"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span><span>' + actionPrimary + "</span></button>"
-        : "") +
+        : '<button type="button" class="button"><span class="material-symbols-outlined" aria-hidden="true">task_alt</span><span>Done</span></button>') +
       '<button type="button" class="button-secondary" data-modal-close><span class="material-symbols-outlined" aria-hidden="true">close</span><span>Back</span></button>' +
       "</div></section>" +
       "</div>"
@@ -232,13 +255,8 @@
     var date = escapeHtml(trigger.dataset.date || "Apr 6, 2026");
     var preview = escapeHtml(trigger.dataset.preview || "");
     var bodyCopy = escapeHtml(trigger.dataset.body || preview || "No further announcement details were provided.");
-    var imageSrc = trigger.dataset.imageSrc ? escapeAttribute(trigger.dataset.imageSrc) : "";
-    var imageAlt = escapeAttribute(trigger.dataset.imageAlt || title);
     var priority = escapeHtml(trigger.dataset.priority || "");
     var author = escapeHtml(trigger.dataset.author || (isAdmin ? "Barangay Office" : "Community notice"));
-    var imageMarkup = imageSrc
-      ? '<div class="dashboard-modal-hero"><img src="' + imageSrc + '" alt="' + imageAlt + '" /></div>'
-      : "";
     var priorityMarkup = priority ? '<span class="announcement-chip announcement-chip-priority">' + priority + "</span>" : "";
     var adminActions = isAdmin
       ? '<div class="button-row"><button type="button" class="button-secondary"><span class="material-symbols-outlined" aria-hidden="true">edit_square</span><span>Edit</span></button><button type="button" class="button-secondary"><span class="material-symbols-outlined" aria-hidden="true">push_pin</span><span>Pin</span></button><button type="button" class="button-secondary"><span class="material-symbols-outlined" aria-hidden="true">delete</span><span>Delete</span></button></div>'
@@ -246,7 +264,6 @@
 
     return (
       '<div class="dashboard-modal-shell">' +
-      imageMarkup +
       '<div class="dashboard-modal-head">' +
       '<div><p class="page-kicker">' + category + '</p><h2 id="dashboard-modal-title">' + title + '</h2><p class="window-note">' + preview + '</p></div>' +
       '<button type="button" class="dashboard-modal-close" data-modal-close aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>' +
@@ -254,7 +271,7 @@
       '<div class="window-meta"><span class="window-chip"><span class="material-symbols-outlined" aria-hidden="true">calendar_today</span><span>' + date + "</span></span><span class=\"window-chip\"><span class=\"material-symbols-outlined\" aria-hidden=\"true\">campaign</span><span>" + author + "</span></span>" + priorityMarkup + "</div>" +
       '<section class="window-section panel"><div class="panel-heading-inline"><span class="material-symbols-outlined" aria-hidden="true">article</span><h2>Announcement details</h2></div><p class="window-note dashboard-modal-copy">' + bodyCopy + "</p></section>" +
       adminActions +
-      '<div class="button-row"><button type="button" class="button" data-modal-close><span class="material-symbols-outlined" aria-hidden="true">visibility</span><span>' + (isAdmin ? "Done Reviewing" : "Close Announcement") + "</span></button></div>" +
+      (isAdmin ? "" : '<div class="button-row"><button type="button" class="button" data-modal-close><span class="material-symbols-outlined" aria-hidden="true">visibility</span><span>Close Announcement</span></button></div>') +
       "</div>"
     );
   }
@@ -268,6 +285,10 @@
 
     if (type === "report") {
       return reportContent(trigger);
+    }
+
+    if (type === "report-compose") {
+      return reportComposeContent();
     }
 
     if (type === "announcement") {
