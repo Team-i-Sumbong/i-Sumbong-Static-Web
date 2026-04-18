@@ -25,6 +25,7 @@ html, body {
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 26px;
+  --mobile-nav-link-padding: 14px;
   --topbar-mobile-offset: 104px;
 }
 
@@ -956,9 +957,14 @@ footer {
     font-size: 1.55rem;
   }
 
+
   .brand-subtitle {
-    font-size: 0.66rem;
-    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 4px;
   }
 
   .mobile-nav-backdrop {
@@ -980,9 +986,9 @@ footer {
     bottom: 0;
     display: flex;
     flex-direction: column;
-    width: min(360px, 100vw);
+    width: min(320px, 100vw);
     height: calc(100dvh - var(--topbar-mobile-offset));
-    padding: 20px 20px 24px;
+    padding: 22px 14px 24px;
     background: rgba(255, 255, 255, 0.98);
     border-left: 1px solid rgba(216, 223, 236, 0.9);
     box-shadow: 0 20px 44px rgba(10, 29, 72, 0.18);
@@ -1001,13 +1007,17 @@ footer {
     align-items: stretch;
     width: 100%;
     padding: 0;
-    gap: 12px;
+    gap: 0;
     flex-wrap: nowrap;
   }
 
+  .nav-center {
+    gap: 18px;
+  }
+
   .nav-right {
-    margin-top: 18px;
-    padding-top: 18px;
+    margin-top: auto;
+    padding-top: 22px;
     border-top: 1px solid rgba(216, 223, 236, 0.7);
   }
 
@@ -1022,28 +1032,42 @@ footer {
     width: 100%;
   }
 
-  .mobile-nav-drawer .nav-link {
+  .mobile-nav-drawer .nav-center .nav-link {
     width: 100%;
-    padding: 12px 14px;
-    border-radius: 14px;
+    padding: 0 var(--mobile-nav-link-padding) 12px;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    font-weight: 700;
   }
 
-  .mobile-nav-drawer .nav-link::after {
-    left: 14px;
-    bottom: 8px;
-    width: calc(100% - 28px);
+  .mobile-nav-drawer .nav-center .nav-link::after {
+    left: var(--mobile-nav-link-padding);
+    bottom: 0;
+    width: calc(100% - (var(--mobile-nav-link-padding) * 2));
+    transform-origin: left;
   }
 
-  .mobile-nav-drawer .nav-link:hover,
-  .mobile-nav-drawer .nav-link:focus-visible,
-  .mobile-nav-drawer .nav-link.active-link {
-    background: rgba(9, 41, 133, 0.07);
+  .mobile-nav-drawer .nav-center .nav-link:hover,
+  .mobile-nav-drawer .nav-center .nav-link:focus-visible,
+  .mobile-nav-drawer .nav-center .nav-link.active-link {
+    background: transparent;
     transform: none;
   }
 
-  .nav-auth {
+  .mobile-nav-drawer .nav-right .nav-auth {
     width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    box-shadow: none;
+  }
+
+  .mobile-nav-drawer .nav-right .nav-helper-link {
+    display: none;
   }
 
   body.menu-open .mobile-nav-backdrop {
@@ -1083,7 +1107,12 @@ footer {
   }
 
   .brand-subtitle {
-    display: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
   }
 
   .mobile-nav-drawer {

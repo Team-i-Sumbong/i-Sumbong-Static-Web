@@ -30,9 +30,12 @@
         <span class="material-symbols-outlined">menu</span>
       </button>
 
+      <div class="mobile-nav-backdrop" aria-hidden="true"
+        onclick="document.body.classList.remove('menu-open')"></div>
+
       <div class="mobile-nav-drawer">
         <nav class="topbar-nav nav-center" aria-label="Promotional sections">
-          <a class="nav-link" href="../../landing-page/index.html#home">Home</a>
+          <a class="nav-link active-link" href="../../landing-page/index.html#home">Home</a>
           <a class="nav-link" href="../../landing-page/index.html#about">About</a>
           <a class="nav-link" href="../../landing-page/index.html#features">Features</a>
           <a class="nav-link" href="../../landing-page/index.html#how-it-works">How it Works</a>
@@ -41,9 +44,7 @@
 
         <nav class="topbar-nav nav-right" aria-label="Primary actions">
           <div class="nav-auth-group">
-            <button type="submit" form="registration-form" class="nav-link active-link nav-auth">
-              Create Account
-            </button>
+            <a class="nav-link nav-auth" href="log-in.html">Login</a>
           </div>
         </nav>
       </div>
