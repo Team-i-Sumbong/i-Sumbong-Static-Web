@@ -253,7 +253,7 @@
     var title = escapeHtml(trigger.dataset.title);
     var category = escapeHtml(trigger.dataset.category || "Barangay Notice");
     var date = escapeHtml(trigger.dataset.date || "Apr 6, 2026");
-    var preview = escapeHtml(trigger.dataset.preview || "");
+    var preview = escapeHtml(trigger.dataset.preview || trigger.dataset.body || "");
     var bodyCopy = escapeHtml(trigger.dataset.body || preview || "No further announcement details were provided.");
     var priority = escapeHtml(trigger.dataset.priority || "");
     var author = escapeHtml(trigger.dataset.author || (isAdmin ? "Barangay Office" : "Community notice"));
@@ -265,13 +265,13 @@
     return (
       '<div class="dashboard-modal-shell">' +
       '<div class="dashboard-modal-head">' +
-      '<div><p class="page-kicker">' + category + '</p><h2 id="dashboard-modal-title">' + title + '</h2><p class="window-note">' + preview + '</p></div>' +
+      '<div><p class="page-kicker">' + category + '</p><h2 id="dashboard-modal-title">' + title + '</h2><p class="window-note">Review the full announcement details below.</p></div>' +
       '<button type="button" class="dashboard-modal-close" data-modal-close aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>' +
       "</div>" +
       '<div class="window-meta"><span class="window-chip"><span class="material-symbols-outlined" aria-hidden="true">calendar_today</span><span>' + date + "</span></span><span class=\"window-chip\"><span class=\"material-symbols-outlined\" aria-hidden=\"true\">campaign</span><span>" + author + "</span></span>" + priorityMarkup + "</div>" +
       '<section class="window-section panel"><div class="panel-heading-inline"><span class="material-symbols-outlined" aria-hidden="true">article</span><h2>Announcement details</h2></div><p class="window-note dashboard-modal-copy">' + bodyCopy + "</p></section>" +
       adminActions +
-      (isAdmin ? "" : '<div class="button-row"><button type="button" class="button" data-modal-close><span class="material-symbols-outlined" aria-hidden="true">visibility</span><span>Close Announcement</span></button></div>') +
+      '<div class="button-row"><button type="button" class="button-secondary" data-modal-close><span class="material-symbols-outlined" aria-hidden="true">close</span><span>Close</span></button></div>' +
       "</div>"
     );
   }

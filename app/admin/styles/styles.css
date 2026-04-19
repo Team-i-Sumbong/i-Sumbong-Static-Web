@@ -946,15 +946,16 @@ th {
   line-height: 1.6;
   font-size: 14px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .announcement-card-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 12px;
   flex-wrap: wrap;
   padding: 14px 16px 16px;
@@ -964,10 +965,21 @@ th {
 .announcement-card-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 700;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
   color: var(--primary);
+  background: rgba(9, 41, 133, 0.08);
+  border: 1px solid rgba(9, 41, 133, 0.12);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.announcement-card:hover .announcement-card-cta,
+.announcement-card:focus-visible .announcement-card-cta {
+  transform: translateY(-1px);
+  background: rgba(9, 41, 133, 0.12);
+  border-color: rgba(9, 41, 133, 0.2);
 }
 
 .announcement-admin-actions {
@@ -1720,6 +1732,12 @@ body.modal-open {
 :root.dark-theme .announcement-preview,
 :root.dark-theme .dashboard-modal-copy {
   color: #c2d0e8;
+}
+
+:root.dark-theme .announcement-card-cta {
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.2);
+  color: #dbeafe;
 }
 
 :root.dark-theme .dashboard-modal-backdrop {
